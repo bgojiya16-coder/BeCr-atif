@@ -633,6 +633,321 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
   .sn-tag{display:none}
   .sn-num{font-size:11px;width:28px}
 }
+/* =============================================
+   RONAS IT STYLE — SERVICES PAGE
+   ============================================= */
+/* Hero */
+.rs-hero{
+  background:var(--coal);
+  padding:140px 64px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.rs-hero::before{
+  content:'';position:absolute;top:-120px;right:-120px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,79,24,.18) 0%,transparent 70%);
+  border-radius:50%;
+}
+.rs-hero-inner{max-width:1200px;margin:0 auto}
+.rs-hero-title{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(38px,6vw,72px);
+  font-weight:900;
+  color:#fff;
+  letter-spacing:-2.5px;
+  line-height:1.05;
+  margin:16px 0 24px;
+}
+.rs-hero-title em{color:var(--orange);font-style:normal}
+.rs-hero-sub{
+  font-size:17px;color:rgba(255,255,255,.5);line-height:1.7;
+  max-width:560px;margin-bottom:40px;
+}
+.rs-hero-stats{display:flex;align-items:center;gap:32px;flex-wrap:wrap}
+.rs-stat{display:flex;flex-direction:column;gap:2px}
+.rs-stat-n{font-family:'Outfit',sans-serif;font-size:28px;font-weight:900;color:#fff;letter-spacing:-1px}
+.rs-stat-l{font-size:11px;color:rgba(255,255,255,.35);font-weight:600;text-transform:uppercase;letter-spacing:.8px}
+.rs-stat-div{width:1px;height:36px;background:rgba(255,255,255,.1)}
+
+/* Layout */
+.rs-layout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  min-height:100vh;
+  background:#fff;
+  max-width:100%;
+}
+
+/* Sidebar */
+.rs-sidebar{
+  position:sticky;
+  top:80px;
+  height:calc(100vh - 80px);
+  border-right:1px solid rgba(0,0,0,.07);
+  padding:48px 0 32px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  overflow-y:auto;
+  background:#fff;
+  z-index:10;
+  scrollbar-width:none;
+}
+.rs-sidebar::-webkit-scrollbar{display:none}
+.rs-sidebar-label{
+  font-size:10px;font-weight:700;color:var(--gray2);letter-spacing:2px;
+  text-transform:uppercase;padding:0 32px 16px;
+  border-bottom:1px solid rgba(0,0,0,.06);margin-bottom:8px;
+}
+.rs-nav{display:flex;flex-direction:column;flex:1}
+.rs-nav-item{
+  display:flex;align-items:center;gap:12px;
+  padding:13px 32px;text-decoration:none;
+  border-left:3px solid transparent;
+  transition:all .25s;position:relative;
+}
+.rs-nav-item:hover{background:rgba(255,79,24,.04)}
+.rs-nav-item.active{
+  border-left-color:var(--orange);
+  background:rgba(255,79,24,.06);
+}
+.rs-nav-item.active .rs-nav-num{color:var(--orange)}
+.rs-nav-item.active .rs-nav-name{color:var(--coal);font-weight:700}
+.rs-nav-num{
+  font-size:11px;font-weight:600;color:var(--gray2);
+  letter-spacing:.5px;width:20px;flex-shrink:0;
+}
+.rs-nav-name{font-size:13px;color:var(--gray);font-weight:500;transition:color .2s}
+.rs-cta-btn{
+  margin:24px 24px 0;
+  background:var(--orange);color:#fff;
+  font-size:13px;font-weight:700;
+  padding:13px 20px;border-radius:12px;border:none;
+  cursor:pointer;font-family:inherit;
+  transition:all .25s;
+  box-shadow:0 8px 24px rgba(255,79,24,.3);
+  text-align:center;
+}
+.rs-cta-btn:hover{background:#e03d08}
+
+/* Content sections */
+.rs-content{padding:0}
+.rs-section{
+  padding:72px 64px 72px 56px;
+  border-bottom:1px solid rgba(0,0,0,.07);
+  position:relative;
+  transition:background .3s;
+}
+.rs-section:last-child{border-bottom:none}
+.rs-section.active-section{background:rgba(255,79,24,.02)}
+.rs-section-head{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.rs-section-num{
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;
+  color:rgba(0,0,0,.2);letter-spacing:1px;
+}
+.rs-tag{
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:var(--orange);background:rgba(255,79,24,.1);
+  border:1px solid rgba(255,79,24,.2);border-radius:100px;
+  padding:3px 12px;
+}
+.rs-section-title{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(28px,3.5vw,44px);
+  font-weight:900;color:var(--coal);
+  letter-spacing:-1.5px;line-height:1.1;
+  margin-bottom:16px;
+}
+.rs-section-intro{
+  font-size:16px;color:var(--gray);line-height:1.75;
+  max-width:640px;margin-bottom:40px;
+}
+.rs-two-col{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:36px;
+}
+.rs-block-label{
+  font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.2px;color:var(--gray2);margin-bottom:16px;
+}
+.rs-checklist{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.rs-checklist li{
+  font-size:14px;color:var(--coal);line-height:1.5;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.rs-checklist li::before{
+  content:'✓';color:var(--orange);font-weight:700;
+  font-size:13px;margin-top:1px;flex-shrink:0;
+}
+.rs-deliverables{display:flex;flex-wrap:wrap;gap:8px}
+.rs-del-pill{
+  font-size:12px;font-weight:600;
+  background:var(--fog);border:1px solid rgba(0,0,0,.06);
+  border-radius:100px;padding:6px 14px;color:var(--coal);
+  transition:all .2s;
+}
+.rs-del-pill:hover{background:rgba(255,79,24,.08);border-color:rgba(255,79,24,.2)}
+.rs-platform{background:var(--coal);color:rgba(255,255,255,.8);border-color:transparent}
+.rs-platform:hover{background:#e03d08;color:#fff}
+.rs-result-box{
+  display:flex;align-items:flex-start;gap:20px;
+  background:linear-gradient(135deg,var(--coal) 0%,#252729 100%);
+  border-radius:20px;padding:28px 32px;margin-bottom:32px;
+  border:1px solid rgba(255,255,255,.06);
+}
+.rs-result-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.rs-result-title{
+  font-size:12px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;color:var(--orange);margin-bottom:6px;
+}
+.rs-result-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.6}
+.rs-section-cta{
+  background:var(--coal);color:#fff;
+  font-size:14px;font-weight:700;
+  padding:14px 28px;border-radius:100px;border:none;
+  cursor:pointer;font-family:inherit;
+  transition:all .25s;
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.rs-section-cta:hover{background:var(--orange);box-shadow:0 12px 32px rgba(255,79,24,.35)}
+
+/* Number decoration */
+.rs-section::after{
+  content:attr(data-num);
+  position:absolute;top:56px;right:56px;
+  font-family:'Outfit',sans-serif;font-size:120px;font-weight:900;
+  color:rgba(0,0,0,.03);line-height:1;pointer-events:none;
+}
+
+/* =============================================
+   QUICK FORM POPUP (bottom-right wedge)
+   ============================================= */
+.qf-toggle{
+  position:fixed;bottom:96px;right:28px;
+  background:var(--coal);color:#fff;
+  font-size:13px;font-weight:700;
+  padding:12px 20px;border-radius:100px;
+  border:none;cursor:pointer;
+  font-family:inherit;z-index:800;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);
+  display:flex;align-items:center;gap:8px;
+  transition:all .3s;
+  white-space:nowrap;
+}
+.qf-toggle:hover{background:var(--orange);transform:translateY(-2px)}
+.qf-toggle .qf-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#4ade80;flex-shrink:0;
+  animation:pulse 2s ease infinite;
+}
+
+.qf-popup{
+  position:fixed;bottom:160px;right:28px;
+  width:320px;
+  background:#fff;border-radius:20px;
+  box-shadow:0 24px 80px rgba(0,0,0,.2);
+  border:1px solid rgba(0,0,0,.07);
+  z-index:799;
+  transform:translateY(20px) scale(.95);
+  opacity:0;pointer-events:none;
+  transition:all .35s cubic-bezier(.34,1.2,.64,1);
+  overflow:hidden;
+}
+.qf-popup.open{
+  transform:translateY(0) scale(1);
+  opacity:1;pointer-events:all;
+}
+.qf-header{
+  background:var(--coal);padding:20px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.qf-header-text h4{
+  font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;
+  color:#fff;margin-bottom:2px;letter-spacing:-.3px;
+}
+.qf-header-text p{font-size:12px;color:rgba(255,255,255,.4)}
+.qf-close{
+  background:rgba(255,255,255,.1);border:none;
+  width:30px;height:30px;border-radius:50%;
+  cursor:pointer;color:#fff;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;flex-shrink:0;
+}
+.qf-close:hover{background:rgba(255,79,24,.5)}
+.qf-body{padding:20px 24px 24px;display:flex;flex-direction:column;gap:12px}
+.qf-field{display:flex;flex-direction:column;gap:5px}
+.qf-field label{
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;color:var(--gray2);
+}
+.qf-field input,
+.qf-field select{
+  background:var(--fog);border:1.5px solid transparent;
+  border-radius:10px;padding:11px 14px;
+  font-size:14px;color:var(--coal);
+  font-family:inherit;outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;appearance:none;
+  width:100%;
+}
+.qf-field input:focus,
+.qf-field select:focus{border-color:var(--orange);background:#fff}
+.qf-submit{
+  background:var(--orange);color:#fff;
+  font-size:14px;font-weight:700;
+  padding:13px;border-radius:12px;
+  border:none;cursor:pointer;font-family:inherit;
+  margin-top:4px;transition:all .25s;
+  box-shadow:0 8px 24px rgba(255,79,24,.3);
+}
+.qf-submit:hover{background:#e03d08;transform:translateY(-1px)}
+.qf-footer{
+  font-size:11px;color:var(--gray2);text-align:center;
+  padding:0 24px 18px;
+}
+
+/* Ronas IT Responsive */
+@media(max-width:1000px){
+  .rs-layout{grid-template-columns:240px 1fr}
+  .rs-section{padding:56px 40px 56px 36px}
+  .rs-two-col{gap:28px}
+}
+@media(max-width:768px){
+  .rs-hero{padding:100px 24px 56px}
+  .rs-layout{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .rs-sidebar{
+    position:relative;top:0;height:auto;
+    flex-direction:row;flex-wrap:wrap;
+    border-right:none;border-bottom:1px solid rgba(0,0,0,.07);
+    padding:16px 16px 8px;gap:4px;
+    overflow-x:auto;
+    align-items:center;
+  }
+  .rs-sidebar-label{display:none}
+  .rs-nav{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:4px;flex:1;scrollbar-width:none}
+  .rs-nav::-webkit-scrollbar{display:none}
+  .rs-nav-item{
+    flex-direction:column;gap:2px;padding:8px 16px;
+    border-left:none;border-bottom:2px solid transparent;
+    white-space:nowrap;border-radius:8px;
+  }
+  .rs-nav-item.active{
+    border-left-color:transparent;
+    border-bottom-color:var(--orange);
+    background:rgba(255,79,24,.06);
+  }
+  .rs-nav-num{display:none}
+  .rs-nav-name{font-size:12px}
+  .rs-cta-btn{margin:0 4px;padding:10px 16px;font-size:12px;white-space:nowrap;flex-shrink:0}
+  .rs-section{padding:40px 20px}
+  .rs-two-col{grid-template-columns:1fr;gap:24px}
+  .rs-section::after{display:none}
+  .qf-popup{width:calc(100vw - 32px);right:16px;bottom:120px}
+  .qf-toggle{right:16px;bottom:88px;font-size:12px;padding:10px 16px}
+}
 </style>
 </head>
 <body>
@@ -963,24 +1278,421 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 
 <!-- SERVICES PAGE -->
 <div id="services-page" class="page">
-  <section style="background:var(--coal);padding:160px 48px 80px;text-align:center">
-    <div class="section-label" style="color:rgba(255,79,24,.8)">Our Services</div>
-    <h1 class="section-title light" style="font-size:clamp(40px,6vw,72px);max-width:700px;margin:0 auto">Everything You Need to Dominate Digitally.</h1>
-    <p class="section-sub light" style="margin:20px auto 0;text-align:center">From brand-building to performance campaigns — we cover every digital touchpoint your business needs to grow.</p>
-  </section>
-  <section class="services" style="background:#fff">
-    <div class="services-grid" style="grid-template-columns:repeat(4,1fr)">
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="service-name">Meta Ads</div><div class="service-desc">Facebook & Instagram campaigns with advanced pixel tracking, A/B creative testing, and daily bid optimisation for maximum ROAS.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="service-name">Social Media Management</div><div class="service-desc">Complete end-to-end social media management including content creation, scheduling, community management, and analytics.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 2l-4 5-4-5"/></svg></div><div class="service-name">Video Editing</div><div class="service-desc">Reels, brand films, testimonial videos, and ad creatives edited with motion graphics and storytelling that captivates audiences.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="service-name">Content Planning</div><div class="service-desc">Monthly content calendars, brand guidelines, caption copy, and visual direction that keeps your audience engaged and growing.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><div class="service-name">Website Design</div><div class="service-desc">Premium websites built on modern frameworks — fast, responsive, SEO-optimised, and designed to convert every visitor.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><div class="service-name">Webpage Design</div><div class="service-desc">High-converting landing pages, sales funnels, and lead capture pages crafted to turn your ad traffic into paying customers.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="service-name">Email Marketing</div><div class="service-desc">Strategic email sequences, newsletters, and automated drip campaigns that nurture leads and drive repeat purchases.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
-      <div class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#FF4F18" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="service-name">Digital Marketing</div><div class="service-desc">Full-funnel digital marketing strategy combining SEO, Google Ads, social ads, and content marketing for holistic brand growth.</div><div class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></div></div>
+
+  <!-- Hero -->
+  <section class="rs-hero">
+    <div class="rs-hero-inner">
+      <div class="section-label" style="color:rgba(255,79,24,.85)">Our Services</div>
+      <h1 class="rs-hero-title scramble" data-text="Everything You Need to Dominate Digitally.">Everything You Need to<br><em>Dominate Digitally.</em></h1>
+      <p class="rs-hero-sub">From brand-building to performance campaigns — every digital touchpoint covered, every rupee tracked, every campaign built to convert.</p>
+      <div class="rs-hero-stats">
+        <div class="rs-stat"><span class="rs-stat-n">8</span><span class="rs-stat-l">Services</span></div>
+        <div class="rs-stat-div"></div>
+        <div class="rs-stat"><span class="rs-stat-n">50+</span><span class="rs-stat-l">Projects</span></div>
+        <div class="rs-stat-div"></div>
+        <div class="rs-stat"><span class="rs-stat-n">3.8×</span><span class="rs-stat-l">Avg ROI</span></div>
+      </div>
     </div>
   </section>
-  <div class="cta-banner"><h2 class="cta-title">Ready To Scale?</h2><p class="cta-sub">Tell us about your brand and we'll craft the perfect digital strategy for you.</p><a href="#" class="btn-white" onclick="showPage('contact');return false">Get Started Free →</a></div>
+
+  <!-- Sticky sidebar + detailed sections -->
+  <div class="rs-layout">
+
+    <!-- LEFT STICKY SIDEBAR -->
+    <aside class="rs-sidebar" id="rsSidebar">
+      <div class="rs-sidebar-label">Services</div>
+      <nav class="rs-nav" id="rsNav">
+        <a class="rs-nav-item active" href="#rs-meta">
+          <span class="rs-nav-num">01</span>
+          <span class="rs-nav-name">Meta Ads</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-social">
+          <span class="rs-nav-num">02</span>
+          <span class="rs-nav-name">Social Media</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-video">
+          <span class="rs-nav-num">03</span>
+          <span class="rs-nav-name">Video Editing</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-website">
+          <span class="rs-nav-num">04</span>
+          <span class="rs-nav-name">Website Design</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-content">
+          <span class="rs-nav-num">05</span>
+          <span class="rs-nav-name">Content Planning</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-email">
+          <span class="rs-nav-num">06</span>
+          <span class="rs-nav-name">Email Marketing</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-perf">
+          <span class="rs-nav-num">07</span>
+          <span class="rs-nav-name">Performance Mktg</span>
+        </a>
+        <a class="rs-nav-item" href="#rs-landing">
+          <span class="rs-nav-num">08</span>
+          <span class="rs-nav-name">Webpage Design</span>
+        </a>
+      </nav>
+      <button class="rs-cta-btn magnetic" onclick="openQuickForm()">Get a Free Quote →</button>
+    </aside>
+
+    <!-- RIGHT DETAIL CONTENT -->
+    <main class="rs-content" id="rsContent">
+
+      <!-- 01 Meta Ads -->
+      <div class="rs-section" id="rs-meta">
+        <div class="rs-section-head">
+          <span class="rs-section-num">01</span>
+          <div class="rs-tag">Performance</div>
+        </div>
+        <h2 class="rs-section-title">Meta Ads</h2>
+        <p class="rs-section-intro">High-converting Facebook & Instagram ad campaigns with precision targeting and ROI-driven creative strategy. We run the numbers daily so your budget never goes to waste.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Full campaign setup & strategy</li>
+              <li>Audience research & targeting</li>
+              <li>A/B creative testing (5+ variants)</li>
+              <li>Pixel setup & conversion tracking</li>
+              <li>Retargeting & lookalike audiences</li>
+              <li>Weekly performance reports</li>
+              <li>Daily bid & budget optimisation</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Campaign Strategy Doc</div>
+              <div class="rs-del-pill">5+ Ad Creatives</div>
+              <div class="rs-del-pill">Audience Map</div>
+              <div class="rs-del-pill">Weekly ROAS Report</div>
+              <div class="rs-del-pill">Funnel Blueprint</div>
+            </div>
+            <div class="rs-block-label" style="margin-top:28px">Platforms</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill rs-platform">Facebook</div>
+              <div class="rs-del-pill rs-platform">Instagram</div>
+              <div class="rs-del-pill rs-platform">Meta Business Suite</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">📈</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Our Meta Ad clients see an average of 3.8× ROAS within the first 60 days of campaign launch.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Start Meta Ads →</button>
+      </div>
+
+      <!-- 02 Social Media -->
+      <div class="rs-section" id="rs-social">
+        <div class="rs-section-head">
+          <span class="rs-section-num">02</span>
+          <div class="rs-tag">Content</div>
+        </div>
+        <h2 class="rs-section-title">Social Media Management</h2>
+        <p class="rs-section-intro">End-to-end social media management from content creation to community building. We handle everything — so your brand stays active, consistent, and growing every single day.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Monthly content calendar</li>
+              <li>Post design & caption writing</li>
+              <li>Reel scripting & editing</li>
+              <li>Story creation & scheduling</li>
+              <li>Community management (DMs & comments)</li>
+              <li>Hashtag & SEO research</li>
+              <li>Monthly analytics report</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">20–30 Posts/month</div>
+              <div class="rs-del-pill">8–12 Reels</div>
+              <div class="rs-del-pill">Story Sets</div>
+              <div class="rs-del-pill">Monthly Report</div>
+              <div class="rs-del-pill">Engagement Stats</div>
+            </div>
+            <div class="rs-block-label" style="margin-top:28px">Platforms</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill rs-platform">Instagram</div>
+              <div class="rs-del-pill rs-platform">Facebook</div>
+              <div class="rs-del-pill rs-platform">LinkedIn</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">🚀</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Brands we manage see 2–5× follower growth and 60%+ higher engagement within 3 months.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Get Social Media Package →</button>
+      </div>
+
+      <!-- 03 Video Editing -->
+      <div class="rs-section" id="rs-video">
+        <div class="rs-section-head">
+          <span class="rs-section-num">03</span>
+          <div class="rs-tag">Creative</div>
+        </div>
+        <h2 class="rs-section-title">Video Editing</h2>
+        <p class="rs-section-intro">Cinematic reels, ad creatives, testimonial videos and brand films — edited with motion graphics and storytelling that stops the scroll and drives action.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Short-form reels (15–60 sec)</li>
+              <li>Long-form brand videos</li>
+              <li>Ad creative editing</li>
+              <li>Motion graphics & text overlays</li>
+              <li>Colour grading & sound design</li>
+              <li>Subtitles & captions</li>
+              <li>Multiple aspect ratios (9:16, 16:9, 1:1)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Edited Videos (MP4)</div>
+              <div class="rs-del-pill">Thumbnail Designs</div>
+              <div class="rs-del-pill">Multi-format Export</div>
+              <div class="rs-del-pill">2 Revision Rounds</div>
+            </div>
+            <div class="rs-block-label" style="margin-top:28px">Tools</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill rs-platform">Premiere Pro</div>
+              <div class="rs-del-pill rs-platform">After Effects</div>
+              <div class="rs-del-pill rs-platform">CapCut Pro</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">🎬</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Our video creatives average 3× higher click-through rate vs. static image ads on Meta.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Order Video Editing →</button>
+      </div>
+
+      <!-- 04 Website Design -->
+      <div class="rs-section" id="rs-website">
+        <div class="rs-section-head">
+          <span class="rs-section-num">04</span>
+          <div class="rs-tag">Design</div>
+        </div>
+        <h2 class="rs-section-title">Website Design</h2>
+        <p class="rs-section-intro">Premium, fast-loading websites built to convert visitors into paying clients. Beautiful UI/UX, SEO-optimised from day one, and designed for every device — desktop to mobile.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>UI/UX design & wireframing</li>
+              <li>Responsive mobile-first build</li>
+              <li>On-page SEO optimisation</li>
+              <li>Speed & Core Web Vitals optimisation</li>
+              <li>Contact forms & lead capture</li>
+              <li>Google Analytics integration</li>
+              <li>1 month post-launch support</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Full Website (5–10 pages)</div>
+              <div class="rs-del-pill">Design File</div>
+              <div class="rs-del-pill">SEO Setup</div>
+              <div class="rs-del-pill">Analytics Dashboard</div>
+            </div>
+            <div class="rs-block-label" style="margin-top:28px">Tech</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill rs-platform">HTML/CSS/JS</div>
+              <div class="rs-del-pill rs-platform">WordPress</div>
+              <div class="rs-del-pill rs-platform">Figma</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">💻</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Websites we build average sub-2s load times and 40%+ higher conversion rates vs. template sites.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Build My Website →</button>
+      </div>
+
+      <!-- 05 Content Planning -->
+      <div class="rs-section" id="rs-content">
+        <div class="rs-section-head">
+          <span class="rs-section-num">05</span>
+          <div class="rs-tag">Strategy</div>
+        </div>
+        <h2 class="rs-section-title">Content Planning</h2>
+        <p class="rs-section-intro">Monthly content calendars, brand guidelines, caption copy, and visual direction — all aligned to your brand voice, audience behaviour, and business goals.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Brand voice & tone document</li>
+              <li>Monthly content calendar</li>
+              <li>Caption copywriting (all posts)</li>
+              <li>Hashtag strategy & sets</li>
+              <li>Content theme pillars</li>
+              <li>Visual direction guidelines</li>
+              <li>Competitor content analysis</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Content Calendar (PDF)</div>
+              <div class="rs-del-pill">Caption Copy Deck</div>
+              <div class="rs-del-pill">Brand Voice Guide</div>
+              <div class="rs-del-pill">Hashtag Sets</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">📅</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Brands with planned content strategy see 4× more consistent posting and 2× audience growth rate.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Plan My Content →</button>
+      </div>
+
+      <!-- 06 Email Marketing -->
+      <div class="rs-section" id="rs-email">
+        <div class="rs-section-head">
+          <span class="rs-section-num">06</span>
+          <div class="rs-tag">Funnels</div>
+        </div>
+        <h2 class="rs-section-title">Email Marketing</h2>
+        <p class="rs-section-intro">High-open-rate campaigns with stunning templates, smart segmentation, and automated drip funnels that nurture your leads around the clock — even while you sleep.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Email template design</li>
+              <li>Welcome & onboarding sequences</li>
+              <li>Abandoned cart automations</li>
+              <li>List segmentation strategy</li>
+              <li>A/B subject line testing</li>
+              <li>Monthly newsletter creation</li>
+              <li>Open rate & click-through reporting</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Email Templates (HTML)</div>
+              <div class="rs-del-pill">Automation Flows</div>
+              <div class="rs-del-pill">Segmentation Map</div>
+              <div class="rs-del-pill">Monthly Reports</div>
+            </div>
+            <div class="rs-block-label" style="margin-top:28px">Platforms</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill rs-platform">Mailchimp</div>
+              <div class="rs-del-pill rs-platform">Klaviyo</div>
+              <div class="rs-del-pill rs-platform">Brevo</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">✉️</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Our email campaigns achieve 28–42% open rates — well above the 20% industry average.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Start Email Marketing →</button>
+      </div>
+
+      <!-- 07 Performance Marketing -->
+      <div class="rs-section" id="rs-perf">
+        <div class="rs-section-head">
+          <span class="rs-section-num">07</span>
+          <div class="rs-tag">Growth</div>
+        </div>
+        <h2 class="rs-section-title">Performance Marketing</h2>
+        <p class="rs-section-intro">Full-funnel digital strategy combining SEO, Google Ads, and paid social. Every rupee tracked, every metric optimised — built for brands that are serious about measurable growth.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Google Search & Display Ads</li>
+              <li>On-page & technical SEO</li>
+              <li>Keyword research & mapping</li>
+              <li>Landing page optimisation</li>
+              <li>Conversion rate optimisation</li>
+              <li>Cross-channel attribution</li>
+              <li>Monthly performance dashboard</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Campaign Setup</div>
+              <div class="rs-del-pill">SEO Audit</div>
+              <div class="rs-del-pill">Keyword Strategy</div>
+              <div class="rs-del-pill">Monthly Reports</div>
+              <div class="rs-del-pill">ROI Dashboard</div>
+            </div>
+            <div class="rs-block-label" style="margin-top:28px">Channels</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill rs-platform">Google Ads</div>
+              <div class="rs-del-pill rs-platform">SEO</div>
+              <div class="rs-del-pill rs-platform">Meta Ads</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">🎯</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Clients on full-funnel performance packages see 50–120% increase in qualified lead volume within 90 days.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Scale With Performance Mktg →</button>
+      </div>
+
+      <!-- 08 Webpage Design -->
+      <div class="rs-section" id="rs-landing">
+        <div class="rs-section-head">
+          <span class="rs-section-num">08</span>
+          <div class="rs-tag">Conversion</div>
+        </div>
+        <h2 class="rs-section-title">Webpage Design</h2>
+        <p class="rs-section-intro">High-converting landing pages and sales funnels engineered to turn ad traffic into paying customers. Built fast, looks premium, and optimised for every device.</p>
+        <div class="rs-two-col">
+          <div>
+            <div class="rs-block-label">What's included</div>
+            <ul class="rs-checklist">
+              <li>Conversion-focused page design</li>
+              <li>Copywriting & messaging</li>
+              <li>CTA placement strategy</li>
+              <li>Lead capture forms & integrations</li>
+              <li>Mobile-first responsive build</li>
+              <li>A/B testing setup</li>
+              <li>Heatmap & session tracking</li>
+            </ul>
+          </div>
+          <div>
+            <div class="rs-block-label">Deliverables</div>
+            <div class="rs-deliverables">
+              <div class="rs-del-pill">Landing Page (live)</div>
+              <div class="rs-del-pill">Funnel Map</div>
+              <div class="rs-del-pill">Copy Deck</div>
+              <div class="rs-del-pill">Analytics Setup</div>
+            </div>
+          </div>
+        </div>
+        <div class="rs-result-box">
+          <div class="rs-result-icon">⚡</div>
+          <div><div class="rs-result-title">Average Result</div><div class="rs-result-desc">Our landing pages convert 2–4× better than generic website pages — averaging 8–15% conversion rates.</div></div>
+        </div>
+        <button class="rs-section-cta magnetic" onclick="openQuickForm()">Build My Landing Page →</button>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner">
+    <h2 class="cta-title">Ready To Scale?</h2>
+    <p class="cta-sub">Tell us about your brand and we'll craft the perfect digital strategy for you.</p>
+    <a href="#" class="btn-white magnetic" onclick="showPage('contact');return false">Get Started Free →</a>
+  </div>
 </div>
 
 <!-- ABOUT PAGE -->
@@ -1141,6 +1853,50 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 </a>
 <div class="wa-tooltip">Chat with us on WhatsApp</div>
 
+<!-- QUICK FORM TOGGLE BUTTON -->
+<button class="qf-toggle" id="qfToggle" onclick="toggleQuickForm()">
+  <span class="qf-dot"></span>
+  Free Consultation
+</button>
+
+<!-- QUICK FORM POPUP -->
+<div class="qf-popup" id="qfPopup">
+  <div class="qf-header">
+    <div class="qf-header-text">
+      <h4>Get a Free Quote</h4>
+      <p>We reply within 2 hours ⚡</p>
+    </div>
+    <button class="qf-close" onclick="toggleQuickForm()">✕</button>
+  </div>
+  <div class="qf-body">
+    <div class="qf-field">
+      <label>Your Name</label>
+      <input type="text" placeholder="Rahul Sharma" id="qfName">
+    </div>
+    <div class="qf-field">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="+91 98765 43210" id="qfPhone">
+    </div>
+    <div class="qf-field">
+      <label>Service Interested In</label>
+      <select id="qfService">
+        <option value="">Select a service...</option>
+        <option>Meta Ads</option>
+        <option>Social Media Management</option>
+        <option>Video Editing</option>
+        <option>Website Design</option>
+        <option>Content Planning</option>
+        <option>Email Marketing</option>
+        <option>Performance Marketing</option>
+        <option>Webpage Design</option>
+        <option>Full Package</option>
+      </select>
+    </div>
+    <button class="qf-submit" onclick="submitQuickForm()">Send Request →</button>
+  </div>
+  <p class="qf-footer">🔒 Your info is safe. No spam, ever.</p>
+</div>
+
 <script>
 // Page transition system
 var isTransitioning = false;
@@ -1172,6 +1928,7 @@ function showPage(name) {
       window.scrollTo({top: 0, behavior: 'instant'});
     }
     if (name === 'home') document.getElementById('home-page').style.display = 'block';
+    if (name === 'services') { setTimeout(initServicesSpy, 300); }
 
     // PHASE 3: Panels sweep OUT (top → bottom)
     setTimeout(function() {
@@ -1424,7 +2181,95 @@ document.querySelectorAll('.sn-item').forEach(function(item) {
 
 
 
-// ── ENTRANCE on first load: curtain sweeps OUT ──
+// ── QUICK FORM ──
+function toggleQuickForm() {
+  var p = document.getElementById('qfPopup');
+  p.classList.toggle('open');
+}
+function openQuickForm() {
+  document.getElementById('qfPopup').classList.add('open');
+  setTimeout(function(){ document.getElementById('qfName').focus(); }, 300);
+}
+function submitQuickForm() {
+  var n = document.getElementById('qfName').value.trim();
+  var p = document.getElementById('qfPhone').value.trim();
+  var s = document.getElementById('qfService').value;
+  if (!n || !p) { alert('Please fill in your name and number.'); return; }
+  alert('🎉 Thanks ' + n + '! We\'ll call you within 2 hours about ' + (s || 'your enquiry') + '. Check WhatsApp too!');
+  document.getElementById('qfPopup').classList.remove('open');
+  document.getElementById('qfName').value = '';
+  document.getElementById('qfPhone').value = '';
+  document.getElementById('qfService').value = '';
+}
+// Close form on outside click
+document.addEventListener('click', function(e) {
+  var popup = document.getElementById('qfPopup');
+  var toggle = document.getElementById('qfToggle');
+  if (popup && popup.classList.contains('open') && !popup.contains(e.target) && !toggle.contains(e.target)) {
+    popup.classList.remove('open');
+  }
+});
+
+// ── SERVICES PAGE SCROLL-SPY ──
+function initServicesSpy() {
+  var sections = document.querySelectorAll('#rsContent .rs-section');
+  var navItems = document.querySelectorAll('#rsNav .rs-nav-item');
+  if (!sections.length) return;
+
+  // Set data-num on sections for CSS counter
+  sections.forEach(function(sec, i) {
+    var num = '0' + (i + 1);
+    sec.setAttribute('data-num', num);
+  });
+
+  // Smooth scroll on sidebar click
+  navItems.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // IntersectionObserver for active highlight
+  var spy = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        navItems.forEach(function(item) {
+          item.classList.remove('active');
+          if (item.getAttribute('href') === '#' + id) {
+            item.classList.add('active');
+            // Scroll sidebar to keep active item visible
+            item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          }
+        });
+        // Mark active section
+        sections.forEach(function(s) { s.classList.remove('active-section'); });
+        entry.target.classList.add('active-section');
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
+
+  sections.forEach(function(s) { spy.observe(s); });
+}
+
+// Re-init spy when services page becomes visible
+var origShowPage = showPage;
+// Re-init scroll spy on services page open
+document.querySelectorAll('[onclick*="services"]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    setTimeout(initServicesSpy, 200);
+  });
+});
+// Init on load if services page is default
+if (document.getElementById('services-page').style.display !== 'none') {
+  initServicesSpy();
+}
+
+
 (function() {
   // Start with panels fully covering screen
   ptOverlay.classList.add('entering');
