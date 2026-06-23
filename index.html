@@ -245,6 +245,540 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 .page.active{display:block}
 #home-page{display:block}
 
+/* ============================================================
+   NOVA-X INSPIRED SERVICES PAGE  — BeCréatif
+   ============================================================ */
+
+/* ----- SERVICES HERO ----- */
+.nx-hero {
+  background: var(--coal);
+  padding: 160px 48px 100px;
+  position: relative;
+  overflow: hidden;
+}
+.nx-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,79,24,.4), transparent);
+}
+.nx-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+}
+.nx-hero-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nx-hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+.nx-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.0;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.nx-hero-title em {
+  font-style: normal;
+  -webkit-text-stroke: 1.5px var(--orange);
+  color: transparent;
+}
+.nx-hero-right {
+  padding-bottom: 12px;
+}
+.nx-hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+.nx-hero-meta {
+  display: flex;
+  gap: 32px;
+}
+.nx-hero-stat {
+  border-left: 2px solid rgba(255,79,24,.3);
+  padding-left: 18px;
+}
+.nx-hero-stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+}
+.nx-hero-stat-num span { color: var(--orange); }
+.nx-hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ----- SERVICE LIST (accordion rows, Nova X style) ----- */
+.nx-list {
+  background: #0c0c0e;
+  position: relative;
+}
+.nx-list::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: rgba(255,255,255,.07);
+}
+.nx-list-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual row */
+.nx-row {
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  overflow: hidden;
+  transition: background .3s;
+  cursor: pointer;
+}
+.nx-row:hover {
+  background: rgba(255,79,24,.03);
+}
+.nx-row.open {
+  background: rgba(255,79,24,.04);
+}
+
+/* Row header (always visible) */
+.nx-row-head {
+  display: grid;
+  grid-template-columns: 60px 1fr auto auto;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 48px;
+  transition: padding .35s;
+}
+.nx-row-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255,79,24,.35);
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+.nx-row-title-wrap {}
+.nx-row-category {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 4px;
+}
+.nx-row-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  transition: color .25s;
+}
+.nx-row:hover .nx-row-name,
+.nx-row.open .nx-row-name {
+  color: #fff;
+}
+.nx-row-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.nx-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.45);
+  transition: all .25s;
+  white-space: nowrap;
+}
+.nx-row:hover .nx-tag,
+.nx-row.open .nx-tag {
+  border-color: rgba(255,79,24,.3);
+  color: rgba(255,79,24,.8);
+  background: rgba(255,79,24,.06);
+}
+.nx-row-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .35s cubic-bezier(.34,1.1,.64,1);
+  color: rgba(255,255,255,.4);
+  font-size: 18px;
+  font-weight: 300;
+}
+.nx-row:hover .nx-row-toggle {
+  border-color: rgba(255,79,24,.4);
+  color: var(--orange);
+}
+.nx-row.open .nx-row-toggle {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+/* Row expanded content */
+.nx-row-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(.4,0,.2,1);
+}
+.nx-row.open .nx-row-body {
+  max-height: 600px;
+}
+.nx-row-body-inner {
+  padding: 0 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 280px;
+  gap: 48px;
+  align-items: start;
+}
+.nx-body-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.8;
+}
+.nx-body-features {}
+.nx-body-features-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.2);
+  margin-bottom: 16px;
+}
+.nx-body-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.nx-body-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,.55);
+}
+.nx-body-features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  opacity: .6;
+  flex-shrink: 0;
+}
+.nx-body-cta-box {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 20px;
+  padding: 28px;
+}
+.nx-body-cta-box-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  margin-bottom: 12px;
+}
+.nx-body-cta-badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -1px;
+  margin-bottom: 6px;
+}
+.nx-body-cta-note {
+  font-size: 12px;
+  color: rgba(255,255,255,.3);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.nx-body-cta-btn {
+  display: block;
+  background: var(--orange);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  text-align: center;
+  transition: all .25s;
+  box-shadow: 0 6px 24px rgba(255,79,24,.3);
+}
+.nx-body-cta-btn:hover {
+  background: #e03d08;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255,79,24,.45);
+}
+
+/* ----- PROCESS STRIP ----- */
+.nx-process {
+  background: var(--coal);
+  padding: 100px 48px;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.nx-process-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nx-process-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 64px;
+  gap: 32px;
+}
+.nx-process-head h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  margin: 0;
+}
+.nx-process-head h2 em {
+  font-style: normal;
+  color: var(--orange);
+}
+.nx-process-head p {
+  font-size: 15px;
+  color: rgba(255,255,255,.4);
+  max-width: 320px;
+  line-height: 1.7;
+  flex-shrink: 0;
+  text-align: right;
+}
+.nx-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.nx-step {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 20px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s, border-color .3s;
+}
+.nx-step:hover {
+  background: rgba(255,79,24,.05);
+  border-color: rgba(255,79,24,.2);
+}
+.nx-step-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: rgba(255,255,255,.04);
+  line-height: 1;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  letter-spacing: -3px;
+  pointer-events: none;
+}
+.nx-step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255,79,24,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.nx-step-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--orange);
+}
+.nx-step-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.5px;
+  margin-bottom: 10px;
+}
+.nx-step-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.7;
+}
+
+/* ----- FINAL CTA BANNER ----- */
+.nx-cta {
+  background: #0c0c0e;
+  padding: 100px 48px;
+  border-top: 1px solid rgba(255,255,255,.05);
+  position: relative;
+  overflow: hidden;
+}
+.nx-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(255,79,24,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.nx-cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.nx-cta-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 24px;
+}
+.nx-cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(36px, 5.5vw, 68px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -2.5px;
+  line-height: 1.02;
+  margin: 0 0 24px;
+}
+.nx-cta-title em {
+  font-style: normal;
+  -webkit-text-stroke: 1.5px var(--orange);
+  color: transparent;
+}
+.nx-cta-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 44px;
+}
+.nx-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.nx-cta-btn-primary {
+  background: var(--orange);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all .25s;
+  box-shadow: 0 8px 32px rgba(255,79,24,.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.nx-cta-btn-primary:hover {
+  background: #e03d08;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(255,79,24,.45);
+}
+.nx-cta-btn-ghost {
+  color: rgba(255,255,255,.65);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,.12);
+  transition: all .25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.nx-cta-btn-ghost:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.3);
+  background: rgba(255,255,255,.04);
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 1024px) {
+  .nx-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .nx-hero-right { padding-bottom: 0; }
+  .nx-row-head { grid-template-columns: 48px 1fr auto; gap: 16px; padding: 24px 32px; }
+  .nx-row-tags { display: none; }
+  .nx-row-body-inner { grid-template-columns: 1fr 1fr; gap: 32px; padding: 0 32px 32px; }
+  .nx-body-cta-box { display: none; }
+  .nx-steps { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .nx-process-head { flex-direction: column; align-items: flex-start; }
+  .nx-process-head p { text-align: left; max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .nx-hero { padding: 140px 20px 64px; }
+  .nx-hero-meta { gap: 20px; }
+  .nx-row-head { padding: 20px 20px; grid-template-columns: 36px 1fr 40px; gap: 12px; }
+  .nx-row-num { font-size: 11px; }
+  .nx-row-body-inner { grid-template-columns: 1fr; padding: 0 20px 28px; gap: 20px; }
+  .nx-steps { grid-template-columns: 1fr; gap: 8px; }
+  .nx-process, .nx-cta { padding: 64px 20px; }
+  .nx-cta-actions { flex-direction: column; align-items: center; }
+}
+
 /* SCROLL REVEAL */
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -422,302 +956,181 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 }
 
 /* =============================================
-   SERVICES SECTION — MODERNISED
+   STUDIO NAMMA STYLE — SERVICES ACCORDION LIST
    ============================================= */
-
-/* ─── Section wrapper ─── */
 .sn-services{
   background:#fff;
-  padding:110px 0 0;
+  padding:100px 0 0;
   position:relative;
   overflow:hidden;
 }
-
-/* ─── Header ─── */
 .sn-services-header{
-  padding:0 64px 68px;
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:end;
-  gap:40px;
+  padding:0 48px 64px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:24px;
 }
 .sn-services-header h2{
   font-family:'Outfit',sans-serif;
-  font-size:clamp(38px,5vw,64px);
+  font-size:clamp(36px,5vw,60px);
   font-weight:900;
   color:var(--coal);
-  letter-spacing:-2.5px;
-  line-height:.95;
-  max-width:520px;
-}
-/* accent word inside heading */
-.sn-services-header h2 em{
-  font-style:normal;
-  color:var(--orange);
-  position:relative;
-}
-.sn-header-right{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:16px;
-  padding-bottom:4px;
+  letter-spacing:-2px;
+  line-height:1;
+  max-width:500px;
 }
 .sn-services-header p{
-  font-size:15px;
+  font-size:16px;
   color:var(--gray);
-  line-height:1.75;
-  max-width:270px;
+  line-height:1.7;
+  max-width:300px;
   text-align:right;
 }
-/* small service-count badge */
-.sn-count-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:var(--fog);
-  border:1px solid var(--border-light);
-  border-radius:100px;
-  padding:5px 14px 5px 6px;
-  font-size:11.5px;
-  font-weight:700;
-  color:var(--gray);
-  letter-spacing:.2px;
-}
-.sn-count-dot{
-  width:24px;height:24px;
-  border-radius:50%;
-  background:var(--orange);
-  color:#fff;
-  font-size:10px;
-  font-weight:800;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-
-/* ─── List wrapper ─── */
+/* The service rows */
 .sn-list{
-  border-top:1.5px solid rgba(0,0,0,.06);
+  border-top:1px solid rgba(0,0,0,.08);
 }
-
-/* ─── Each row ─── */
 .sn-item{
-  display:grid;
-  grid-template-columns:52px 1fr auto auto;
+  display:flex;
   align-items:center;
-  padding:0 64px;
-  min-height:92px;
-  border-bottom:1.5px solid rgba(0,0,0,.06);
+  padding:0 48px;
+  border-bottom:1px solid rgba(0,0,0,.08);
   position:relative;
   cursor:pointer;
   overflow:hidden;
-  transition:background .2s ease;
+  transition:background .3s;
 }
-
-/* Dark background sweep from left */
-.sn-item::before{
+.sn-item::after{
   content:'';
   position:absolute;
   inset:0;
-  background:var(--coal);
+  background:var(--orange);
   transform:scaleX(0);
   transform-origin:left;
-  transition:transform .52s cubic-bezier(.86,0,.07,1);
+  transition:transform .5s cubic-bezier(.86,0,.07,1);
   z-index:0;
 }
-.sn-item:hover::before{ transform:scaleX(1); }
-
-/* Orange left edge accent revealed on hover */
-.sn-item-edge{
-  position:absolute;
-  left:0; top:15%; bottom:15%;
-  width:3px;
-  background:var(--orange);
-  border-radius:0 3px 3px 0;
-  transform:scaleY(0);
-  transform-origin:center;
-  transition:transform .32s cubic-bezier(.34,1.56,.64,1);
-  z-index:2;
-}
-.sn-item:hover .sn-item-edge{ transform:scaleY(1); }
-
-/* Text colour flip on hover */
+.sn-item:hover::after{transform:scaleX(1)}
 .sn-item:hover .sn-num,
-.sn-item:hover .sn-name{ color:#fff; }
-.sn-item:hover .sn-tag{
-  background:rgba(255,255,255,.1);
-  border-color:rgba(255,255,255,.18);
-  color:rgba(255,255,255,.75);
-}
+.sn-item:hover .sn-name,
+.sn-item:hover .sn-tag,
+.sn-item:hover .sn-arrow{color:#fff}
+.sn-item:hover .sn-tag{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.3)}
 
-/* ── Row: number ── */
+/* row content */
 .sn-num{
-  font-family:'DM Sans',sans-serif;
-  font-size:11px;
+  font-size:12px;
   font-weight:700;
   color:var(--gray2);
-  letter-spacing:1.5px;
+  letter-spacing:1px;
+  width:40px;
   flex-shrink:0;
   position:relative;z-index:1;
-  transition:color .28s;
-  user-select:none;
+  transition:color .3s;
 }
-
-/* ── Row: service name ── */
 .sn-name{
   font-family:'Outfit',sans-serif;
-  font-size:clamp(20px,2.8vw,38px);
+  font-size:clamp(22px,3.5vw,40px);
   font-weight:800;
   color:var(--coal);
   letter-spacing:-1px;
-  line-height:1;
-  padding:0 28px;
+  flex:1;
+  padding:28px 24px;
   position:relative;z-index:1;
-  transition:color .28s;
+  transition:color .3s;
 }
-
-/* ── Row: category pill ── */
 .sn-tag{
-  font-size:10px;
+  font-size:11px;
   font-weight:700;
-  letter-spacing:1px;
+  letter-spacing:.8px;
   text-transform:uppercase;
   color:var(--orange);
-  background:rgba(255,79,24,.07);
-  border:1px solid rgba(255,79,24,.18);
+  background:rgba(255,79,24,.08);
+  border:1px solid rgba(255,79,24,.15);
   border-radius:100px;
-  padding:5px 15px;
+  padding:5px 14px;
   position:relative;z-index:1;
-  transition:all .28s;
+  transition:all .3s;
   flex-shrink:0;
   margin-right:32px;
 }
-
-/* ── Row: animated circle arrow ── */
 .sn-arrow{
-  width:38px;height:38px;
-  border-radius:50%;
-  border:1.5px solid rgba(0,0,0,.13);
-  display:flex;align-items:center;justify-content:center;
-  font-size:17px;
+  font-size:22px;
   color:var(--coal);
   position:relative;z-index:1;
+  transition:color .3s, transform .3s;
   flex-shrink:0;
-  transition:background .28s, border-color .28s, color .28s, transform .35s cubic-bezier(.34,1.2,.64,1);
 }
-.sn-item:hover .sn-arrow{
-  background:var(--orange);
-  border-color:var(--orange);
-  color:#fff;
-  transform:rotate(-45deg) scale(1.1);
-}
+.sn-item:hover .sn-arrow{transform:rotate(-45deg)}
 
-/* ─── Floating preview card ─── */
+/* Floating preview card that follows mouse */
 .sn-preview{
   position:fixed;
-  width:316px;
-  border-radius:22px;
+  width:340px;
+  border-radius:20px;
   overflow:hidden;
   pointer-events:none;
   z-index:500;
   opacity:0;
-  transform:scale(.86) translateY(18px);
-  transition:opacity .2s ease, transform .28s cubic-bezier(.34,1.15,.64,1);
-  box-shadow:0 40px 90px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.06);
+  transform:scale(.88) translateY(12px);
+  transition:opacity .25s ease, transform .3s cubic-bezier(.34,1.2,.64,1);
+  box-shadow:0 32px 80px rgba(0,0,0,.2);
 }
-.sn-preview.visible{
-  opacity:1;
-  transform:scale(1) translateY(0);
-}
-
-/* card body */
+.sn-preview.visible{opacity:1;transform:scale(1) translateY(0)}
 .sn-preview-inner{
   background:var(--coal);
-  padding:28px 28px 24px;
-  min-height:200px;
+  padding:32px;
+  min-height:220px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   position:relative;
   overflow:hidden;
 }
-/* ambient glow top-right */
 .sn-preview-inner::before{
   content:'';
   position:absolute;
-  top:-50px;right:-50px;
-  width:160px;height:160px;
+  top:-60px;right:-60px;
+  width:200px;height:200px;
   background:var(--orange);
   border-radius:50%;
-  opacity:.13;
-  filter:blur(36px);
-  pointer-events:none;
+  opacity:.15;
+  filter:blur(40px);
 }
-/* subtle bottom-left wash */
-.sn-preview-inner::after{
-  content:'';
-  position:absolute;
-  bottom:-40px;left:-40px;
-  width:130px;height:130px;
-  background:rgba(255,255,255,.025);
-  border-radius:50%;
-  filter:blur(24px);
-  pointer-events:none;
-}
-
-/* icon box */
 .sn-preview-icon{
-  width:46px;height:46px;
-  border-radius:13px;
-  background:rgba(255,79,24,.16);
-  border:1px solid rgba(255,79,24,.22);
+  width:56px;height:56px;
+  border-radius:16px;
+  background:rgba(255,79,24,.15);
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:14px;
-  position:relative;z-index:1;
-  flex-shrink:0;
+  margin-bottom:20px;
 }
 .sn-preview-title{
   font-family:'Outfit',sans-serif;
-  font-size:19px;
+  font-size:22px;
   font-weight:800;
   color:#fff;
-  letter-spacing:-.4px;
-  margin-bottom:7px;
-  position:relative;z-index:1;
-  line-height:1.1;
+  letter-spacing:-.5px;
+  margin-bottom:10px;
 }
 .sn-preview-desc{
-  font-size:12.5px;
-  color:rgba(255,255,255,.42);
-  line-height:1.68;
+  font-size:13px;
+  color:rgba(255,255,255,.5);
+  line-height:1.6;
   flex:1;
-  position:relative;z-index:1;
 }
 .sn-preview-pills{
-  display:flex;flex-wrap:wrap;gap:5px;
-  margin-top:16px;
-  position:relative;z-index:1;
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;
 }
 .sn-preview-pill{
-  font-size:9.5px;font-weight:600;
-  letter-spacing:.5px;text-transform:uppercase;
-  background:rgba(255,255,255,.055);
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:100px;
-  padding:3px 10px;
-  color:rgba(255,255,255,.42);
+  font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:100px;padding:4px 10px;color:rgba(255,255,255,.5);
 }
 .sn-preview-num{
-  position:absolute;bottom:16px;right:20px;
-  font-family:'Outfit',sans-serif;font-size:68px;font-weight:900;
-  color:rgba(255,255,255,.032);line-height:1;
-  pointer-events:none;
-  user-select:none;
-}
-/* 3px orange accent strip at the bottom of the preview card */
-.sn-preview-strip{
-  height:3px;
-  background:linear-gradient(90deg,var(--orange) 0%,#FF8255 100%);
+  position:absolute;bottom:24px;right:28px;
+  font-family:'Outfit',sans-serif;font-size:80px;font-weight:900;
+  color:rgba(255,255,255,.04);line-height:1;
 }
 
 /* =============================================
@@ -785,26 +1198,19 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
    NAMMA RESPONSIVE
    ============================================= */
 @media(max-width:900px){
-  .sn-services-header{
-    padding:0 28px 52px;
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-  .sn-header-right{align-items:flex-start}
+  .sn-services-header{padding:0 24px 48px;flex-direction:column;align-items:flex-start}
   .sn-services-header p{text-align:left;max-width:100%}
-  .sn-item{padding:0 28px;grid-template-columns:40px 1fr auto auto;min-height:78px}
-  .sn-name{font-size:clamp(18px,3.5vw,26px);padding:0 18px}
-  .sn-tag{margin-right:20px}
+  .sn-item{padding:0 24px}
+  .sn-name{font-size:22px;padding:22px 16px}
   .sn-preview{display:none}
 }
 @media(max-width:600px){
-  .sn-services{padding:72px 0 0}
-  .sn-services-header{padding:0 20px 40px}
-  .sn-item{padding:0 20px;grid-template-columns:34px 1fr auto;min-height:70px}
-  .sn-name{font-size:17px;padding:0 14px}
+  .sn-services{padding:64px 0 0}
+  .sn-services-header{padding:0 16px 36px}
+  .sn-item{padding:0 16px}
+  .sn-name{font-size:18px;padding:18px 12px}
   .sn-tag{display:none}
-  .sn-num{font-size:10px}
-  .sn-arrow{width:32px;height:32px;font-size:15px}
+  .sn-num{font-size:11px;width:28px}
 }
 /* =============================================
    BLOG PAGE STYLES
@@ -1972,19 +2378,12 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </svg>
     </div>
     <div class="sn-services-header">
-      <h2 class="scramble" data-text="What We Do.">What We <em>Do.</em></h2>
-      <div class="sn-header-right">
-        <span class="sn-count-badge">
-          <span class="sn-count-dot">8</span>
-          Core Services
-        </span>
-        <p>Full-spectrum digital marketing — every service built to generate real, measurable growth.</p>
-      </div>
+      <h2 class="scramble" data-text="What We Do.">What We Do.</h2>
+      <p>Full-spectrum digital marketing — every service built to generate real growth for your brand.</p>
     </div>
     <div class="sn-list">
 
       <div class="sn-item" data-service="0">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">01</span>
         <span class="sn-name">Meta Ads</span>
         <span class="sn-tag">Performance</span>
@@ -1992,7 +2391,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="1">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">02</span>
         <span class="sn-name">Social Media Management</span>
         <span class="sn-tag">Content</span>
@@ -2000,7 +2398,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="2">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">03</span>
         <span class="sn-name">Video Editing</span>
         <span class="sn-tag">Creative</span>
@@ -2008,7 +2405,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="3">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">04</span>
         <span class="sn-name">Website Design</span>
         <span class="sn-tag">Design</span>
@@ -2016,7 +2412,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="4">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">05</span>
         <span class="sn-name">Content Planning</span>
         <span class="sn-tag">Strategy</span>
@@ -2024,7 +2419,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="5">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">06</span>
         <span class="sn-name">Email Marketing</span>
         <span class="sn-tag">Funnels</span>
@@ -2032,7 +2426,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="6">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">07</span>
         <span class="sn-name">Performance Marketing</span>
         <span class="sn-tag">Growth</span>
@@ -2040,7 +2433,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
       <div class="sn-item" data-service="7">
-        <div class="sn-item-edge"></div>
         <span class="sn-num">08</span>
         <span class="sn-name">Webpage Design</span>
         <span class="sn-tag">Conversion</span>
@@ -2048,7 +2440,7 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       </div>
 
     </div>
-    <div style="padding:48px 64px;text-align:center">
+    <div style="padding:40px 48px;text-align:center">
       <a href="#" class="btn-primary magnetic" onclick="showPage('services');return false">Explore All Services →</a>
     </div>
   </section>
@@ -2064,7 +2456,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
       <div class="sn-preview-pills" id="snPreviewPills"></div>
       <div class="sn-preview-num" id="snPreviewNum">01</div>
     </div>
-    <div class="sn-preview-strip"></div>
   </div>
 
   <!-- WHY CHOOSE US -->
@@ -2325,257 +2716,444 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 
 <!-- SERVICES PAGE -->
 <div id="services-page" class="page">
-  <section style="background:var(--coal);padding:160px 48px 80px;text-align:center">
-    <div class="section-label" style="color:rgba(255,79,24,.8)">Our Services</div>
-    <h1 class="section-title light" style="font-size:clamp(40px,6vw,72px);max-width:700px;margin:0 auto">Everything You Need to Dominate Digitally.</h1>
-    <p class="section-sub light" style="margin:20px auto 0;text-align:center">From brand-building to performance campaigns — we cover every digital touchpoint your business needs to grow.</p>
-  </section>
-  <!-- UNITS.GR STYLE BLOCK GRID — SERVICES -->
-  <!-- ✦ PREMIUM SERVICES CARD GRID ✦ -->
-  <section class="ub-section">
 
-    <!-- SECTION HEADER -->
-    <div class="ub-header">
-      <div class="ub-header-left">
-        <div class="ub-header-eyebrow">What We Do</div>
-        <h2>Services Built to<br><em>Scale Your Brand.</em></h2>
+  <!-- ══ NOVA-X SERVICES HERO ══ -->
+  <section class="nx-hero">
+    <div class="nx-hero-inner">
+      <div class="nx-hero-left">
+        <div class="nx-hero-eyebrow">Our Services</div>
+        <h1 class="nx-hero-title">Digital That<br><em>Actually Works.</em></h1>
       </div>
-      <div class="ub-header-right">
-        <p>Full-spectrum digital marketing — every service engineered for real, measurable growth. No fluff. Just results.</p>
-        <a href="#" class="ub-header-cta" onclick="showPage('contact');return false">Talk to Us →</a>
+      <div class="nx-hero-right">
+        <p class="nx-hero-desc">From performance campaigns to brand identity — every service we offer is engineered for one thing: measurable growth. No fluff, no guesswork.</p>
+        <div class="nx-hero-meta">
+          <div class="nx-hero-stat">
+            <div class="nx-hero-stat-num">50<span>+</span></div>
+            <div class="nx-hero-stat-label">Brands Scaled</div>
+          </div>
+          <div class="nx-hero-stat">
+            <div class="nx-hero-stat-num">3.8<span>×</span></div>
+            <div class="nx-hero-stat-label">Avg. ROAS</div>
+          </div>
+          <div class="nx-hero-stat">
+            <div class="nx-hero-stat-num">9</div>
+            <div class="nx-hero-stat-label">Services</div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- CARD GRID -->
-    <div class="ub-grid">
+  <!-- ══ SERVICE ACCORDION ROWS ══ -->
+  <section class="nx-list">
+    <div class="nx-list-inner">
 
-      <!-- 1 · META ADS — WIDE FEATURED -->
-      <div class="ub-block ub-wide" style="--ub-bg:linear-gradient(160deg,#1a0a00 0%,#2e0d00 50%,#ff4f18 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">⚡ Performance</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <!-- ROW 1 — META ADS -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">01</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Performance</div>
+            <h3 class="nx-row-name">Meta Ads</h3>
           </div>
-          <h3 class="ub-block-title">Meta Ads</h3>
-          <p class="ub-block-desc">Facebook & Instagram campaigns engineered for maximum ROAS. We handle creative, targeting, A/B testing, and daily bid optimisation so your budget works harder every single day.</p>
-          <ul class="ub-block-list">
-            <li>Advanced pixel &amp; CAPI tracking</li>
-            <li>A/B creative testing</li>
-            <li>Retargeting funnels</li>
-            <li>ROAS optimisation</li>
-            <li>Lookalike audiences</li>
-            <li>Weekly performance reports</li>
-          </ul>
-        </div>
-        <div class="ub-stat-badge">
-          <div class="ub-stat-badge-num">3.8×</div>
-          <div class="ub-stat-badge-label">Avg. ROAS</div>
-        </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Start Your Campaign</span>
-          <div class="ub-block-arrow">↗</div>
-        </div>
-      </div>
-
-      <!-- 2 · SOCIAL MEDIA -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#001a12 0%,#003d28 60%,#00c97a 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">📱 Content</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Facebook</span>
+            <span class="nx-tag">Instagram</span>
+            <span class="nx-tag">ROAS</span>
           </div>
-          <h3 class="ub-block-title">Social Media Management</h3>
-          <p class="ub-block-desc">End-to-end content creation, community management, and growth strategy across Instagram, LinkedIn & Facebook.</p>
-          <ul class="ub-block-list">
-            <li>Monthly content calendar</li>
-            <li>Reels &amp; static posts</li>
-            <li>Community management</li>
-            <li>Analytics &amp; growth reports</li>
-          </ul>
+          <div class="nx-row-toggle">+</div>
         </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Grow Your Following</span>
-          <div class="ub-block-arrow">↗</div>
-        </div>
-      </div>
-
-      <!-- 3 · VIDEO EDITING -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#0d001a 0%,#280040 60%,#9b4dff 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">🎬 Creative</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">Facebook & Instagram campaigns engineered for maximum return. We handle creative strategy, audience architecture, A/B testing, and daily bid optimisation so your budget works harder every single day.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Advanced pixel & CAPI tracking</li>
+                <li>A/B creative testing</li>
+                <li>Retargeting funnels</li>
+                <li>ROAS optimisation</li>
+                <li>Lookalike audiences</li>
+                <li>Weekly performance reports</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Average result</div>
+              <div class="nx-body-cta-badge">3.8× ROAS</div>
+              <div class="nx-body-cta-note">Across 50+ campaigns over 2 years</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Start Your Campaign →</a>
+            </div>
           </div>
-          <h3 class="ub-block-title">Video Editing</h3>
-          <p class="ub-block-desc">Cinematic reels, brand films, and motion-graphic ad creatives that stop the scroll and move people to act.</p>
-          <ul class="ub-block-list">
-            <li>Short-form reels</li>
-            <li>Brand films</li>
-            <li>Ad creatives</li>
-            <li>Motion graphics</li>
-          </ul>
-        </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">See Sample Work</span>
-          <div class="ub-block-arrow">↗</div>
         </div>
       </div>
 
-      <!-- 4 · WEBSITE DESIGN -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#001525 0%,#003050 60%,#0099e6 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">🌐 Design</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20"/></svg>
+      <!-- ROW 2 — SOCIAL MEDIA -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">02</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Content</div>
+            <h3 class="nx-row-name">Social Media Management</h3>
           </div>
-          <h3 class="ub-block-title">Website Design</h3>
-          <p class="ub-block-desc">Premium, fast-loading websites built to convert — beautiful UI/UX on every device, optimised for SEO from day one.</p>
-          <ul class="ub-block-list">
-            <li>UI/UX design</li>
-            <li>SEO-optimised build</li>
-            <li>Mobile-first</li>
-            <li>CRO-focused</li>
-          </ul>
-        </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Get a Website Quote</span>
-          <div class="ub-block-arrow">↗</div>
-        </div>
-      </div>
-
-      <!-- 5 · CONTENT PLANNING -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#1a1000 0%,#3d2800 60%,#ff9500 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">📋 Strategy</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Instagram</span>
+            <span class="nx-tag">LinkedIn</span>
+            <span class="nx-tag">Reels</span>
           </div>
-          <h3 class="ub-block-title">Content Planning</h3>
-          <p class="ub-block-desc">Monthly calendars, brand voice guides, and strategic caption copy that keeps your audience engaged and growing.</p>
-          <ul class="ub-block-list">
-            <li>Content strategy</li>
-            <li>Brand voice guide</li>
-            <li>Monthly calendars</li>
-            <li>Caption copywriting</li>
-          </ul>
+          <div class="nx-row-toggle">+</div>
         </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Plan Content Now</span>
-          <div class="ub-block-arrow">↗</div>
-        </div>
-      </div>
-
-      <!-- 6 · EMAIL MARKETING -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#001a1a 0%,#003d3d 60%,#00c9c9 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">✉️ Funnels</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">End-to-end content creation, community management, and growth strategy across Instagram, LinkedIn & Facebook. We become your brand voice so you can focus on running the business.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Monthly content calendar</li>
+                <li>Reels & static posts</li>
+                <li>Community management</li>
+                <li>Caption copywriting</li>
+                <li>Analytics & growth reports</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Starting from</div>
+              <div class="nx-body-cta-badge">Custom Plan</div>
+              <div class="nx-body-cta-note">Tailored to your posting frequency</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Grow Your Following →</a>
+            </div>
           </div>
-          <h3 class="ub-block-title">Email Marketing</h3>
-          <p class="ub-block-desc">High-open-rate campaigns with smart segmentation and automated drip funnels that nurture leads 24/7 on autopilot.</p>
-          <ul class="ub-block-list">
-            <li>Email campaigns</li>
-            <li>Automation flows</li>
-            <li>Segmentation</li>
-            <li>A/B testing</li>
-          </ul>
-        </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Build Your Funnel</span>
-          <div class="ub-block-arrow">↗</div>
         </div>
       </div>
 
-      <!-- 7 · PERFORMANCE MARKETING — WIDE FEATURED -->
-      <div class="ub-block ub-wide" style="--ub-bg:linear-gradient(160deg,#0a001a 0%,#1a0035 50%,#cc00ff 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">📈 Growth</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <!-- ROW 3 — VIDEO EDITING -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">03</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Creative</div>
+            <h3 class="nx-row-name">Video Editing</h3>
           </div>
-          <h3 class="ub-block-title">Performance Marketing</h3>
-          <p class="ub-block-desc">Full-funnel digital strategy combining SEO, Google Ads, and paid social. Every rupee tracked, every metric optimised. We don't celebrate impressions — we celebrate revenue.</p>
-          <ul class="ub-block-list">
-            <li>Google Search &amp; Display Ads</li>
-            <li>SEO &amp; SEM</li>
-            <li>Paid social strategy</li>
-            <li>Attribution &amp; analytics</li>
-            <li>Weekly optimisation sprints</li>
-            <li>Full-funnel reporting</li>
-          </ul>
-        </div>
-        <div class="ub-stat-badge">
-          <div class="ub-stat-badge-num">50+</div>
-          <div class="ub-stat-badge-label">Campaigns Run</div>
-        </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Scale Your Growth</span>
-          <div class="ub-block-arrow">↗</div>
-        </div>
-      </div>
-
-      <!-- 8 · WEBPAGE / LANDING PAGE DESIGN -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#001a08 0%,#003d18 60%,#00e664 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">🎯 Conversion</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Reels</span>
+            <span class="nx-tag">Brand Films</span>
+            <span class="nx-tag">Motion</span>
           </div>
-          <h3 class="ub-block-title">Landing Pages</h3>
-          <p class="ub-block-desc">High-converting landing pages and sales funnels that turn ad traffic into paying customers. Built fast, looks premium.</p>
-          <ul class="ub-block-list">
-            <li>Sales funnel design</li>
-            <li>Lead capture pages</li>
-            <li>Split A/B testing</li>
-            <li>CRO audits</li>
-          </ul>
+          <div class="nx-row-toggle">+</div>
         </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Launch a Page</span>
-          <div class="ub-block-arrow">↗</div>
-        </div>
-      </div>
-
-      <!-- 9 · BRAND IDENTITY -->
-      <div class="ub-block" style="--ub-bg:linear-gradient(160deg,#1a0008 0%,#3d001a 60%,#ff006a 130%)">
-        <div class="ub-block-inner">
-          <div class="ub-block-tag">✦ Branding</div>
-          <div class="ub-block-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">Cinematic reels, brand films, and motion-graphic ad creatives that stop the scroll and move people to act. Every cut is intentional, every frame serves the conversion goal.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Short-form reels (9:16)</li>
+                <li>Brand films & case videos</li>
+                <li>Ad creatives (all formats)</li>
+                <li>Motion graphics & titles</li>
+                <li>Sound design & colour grade</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Turnaround</div>
+              <div class="nx-body-cta-badge">48–72 hrs</div>
+              <div class="nx-body-cta-note">Rush delivery available on request</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">See Sample Work →</a>
+            </div>
           </div>
-          <h3 class="ub-block-title">Brand Identity</h3>
-          <p class="ub-block-desc">Logos, colour systems, typography, and brand guidelines that give your business a premium, consistent look everywhere.</p>
-          <ul class="ub-block-list">
-            <li>Logo &amp; visual identity</li>
-            <li>Brand guidelines</li>
-            <li>Colour &amp; type system</li>
-            <li>Social media kit</li>
-          </ul>
-        </div>
-        <div class="ub-block-footer">
-          <span class="ub-block-cta">Build Your Brand</span>
-          <div class="ub-block-arrow">↗</div>
         </div>
       </div>
 
-    </div><!-- /ub-grid -->
-
-    <!-- CTA BAND -->
-    <div class="ub-cta-band">
-      <div class="ub-cta-band-left">
-        <p><strong>Not sure which service fits your brand?</strong> Book a free 30-minute strategy call — we'll map out exactly what you need.</p>
+      <!-- ROW 4 — WEBSITE DESIGN -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">04</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Design</div>
+            <h3 class="nx-row-name">Website Design</h3>
+          </div>
+          <div class="nx-row-tags">
+            <span class="nx-tag">UI/UX</span>
+            <span class="nx-tag">SEO</span>
+            <span class="nx-tag">Mobile-first</span>
+          </div>
+          <div class="nx-row-toggle">+</div>
+        </div>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">Premium, fast-loading websites built to convert — beautiful UI/UX on every device, technically optimised for SEO from day one. We don't make websites that just look good. We make websites that sell.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>UI/UX design & wireframes</li>
+                <li>SEO-optimised build</li>
+                <li>Mobile-first responsive</li>
+                <li>CRO-focused structure</li>
+                <li>Speed & Core Web Vitals</li>
+                <li>CMS integration</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Delivery time</div>
+              <div class="nx-body-cta-badge">7–14 days</div>
+              <div class="nx-body-cta-note">Depending on scope & pages</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Get a Quote →</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="ub-cta-band-actions">
-        <a href="#" class="ub-btn-primary" onclick="showPage('contact');return false">Book Free Consultation →</a>
-        <a href="#" class="ub-btn-secondary" onclick="showPage('contact');return false">WhatsApp Us</a>
+
+      <!-- ROW 5 — PERFORMANCE MARKETING -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">05</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Growth</div>
+            <h3 class="nx-row-name">Performance Marketing</h3>
+          </div>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Google Ads</span>
+            <span class="nx-tag">SEO/SEM</span>
+            <span class="nx-tag">Full-funnel</span>
+          </div>
+          <div class="nx-row-toggle">+</div>
+        </div>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">Full-funnel digital strategy combining SEO, Google Ads, and paid social. Every rupee tracked, every metric optimised. We don't celebrate impressions — we celebrate revenue.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Google Search & Display Ads</li>
+                <li>SEO & SEM strategy</li>
+                <li>Paid social integration</li>
+                <li>Attribution & analytics setup</li>
+                <li>Weekly optimisation sprints</li>
+                <li>Full-funnel reporting</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Campaigns managed</div>
+              <div class="nx-body-cta-badge">50+ Campaigns</div>
+              <div class="nx-body-cta-note">Pan India, across 10+ industries</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Scale Your Growth →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 6 — BRAND IDENTITY -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">06</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Branding</div>
+            <h3 class="nx-row-name">Brand Identity</h3>
+          </div>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Logo</span>
+            <span class="nx-tag">Guidelines</span>
+            <span class="nx-tag">Visual System</span>
+          </div>
+          <div class="nx-row-toggle">+</div>
+        </div>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">Logos, colour systems, typography, and brand guidelines that give your business a premium, consistent look everywhere it shows up — from your Instagram grid to your business card.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Logo & visual identity</li>
+                <li>Brand guidelines document</li>
+                <li>Colour & type system</li>
+                <li>Social media kit</li>
+                <li>Stationery & print assets</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Deliverable</div>
+              <div class="nx-body-cta-badge">Full Brand Kit</div>
+              <div class="nx-body-cta-note">AI, PNG, PDF + guidelines PDF</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Build Your Brand →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 7 — CONTENT PLANNING -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">07</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Strategy</div>
+            <h3 class="nx-row-name">Content Planning</h3>
+          </div>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Calendar</span>
+            <span class="nx-tag">Copywriting</span>
+            <span class="nx-tag">Brand Voice</span>
+          </div>
+          <div class="nx-row-toggle">+</div>
+        </div>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">Monthly calendars, brand voice guides, and strategic caption copy that keeps your audience engaged and growing. Never run out of ideas — we plan 30 days ahead, every month.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Monthly content strategy</li>
+                <li>Brand voice guide</li>
+                <li>30-day content calendar</li>
+                <li>Caption copywriting</li>
+                <li>Hashtag & SEO research</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Cadence</div>
+              <div class="nx-body-cta-badge">Monthly</div>
+              <div class="nx-body-cta-note">Delivered by the 25th, every month</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Plan Content Now →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 8 — LANDING PAGES -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">08</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Conversion</div>
+            <h3 class="nx-row-name">Landing Pages</h3>
+          </div>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Sales Funnels</span>
+            <span class="nx-tag">CRO</span>
+            <span class="nx-tag">A/B Testing</span>
+          </div>
+          <div class="nx-row-toggle">+</div>
+        </div>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">High-converting landing pages and sales funnels that turn ad traffic into paying customers. Fast to build, premium to look at, relentless at converting.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Sales funnel design</li>
+                <li>Lead capture pages</li>
+                <li>Split A/B testing</li>
+                <li>CRO audits</li>
+                <li>Analytics integration</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Turnaround</div>
+              <div class="nx-body-cta-badge">3–5 days</div>
+              <div class="nx-body-cta-note">From brief to live page</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Launch a Page →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 9 — EMAIL MARKETING -->
+      <div class="nx-row" onclick="nxToggle(this)">
+        <div class="nx-row-head">
+          <span class="nx-row-num">09</span>
+          <div class="nx-row-title-wrap">
+            <div class="nx-row-category">Funnels</div>
+            <h3 class="nx-row-name">Email Marketing</h3>
+          </div>
+          <div class="nx-row-tags">
+            <span class="nx-tag">Automation</span>
+            <span class="nx-tag">Segmentation</span>
+            <span class="nx-tag">Drip Flows</span>
+          </div>
+          <div class="nx-row-toggle">+</div>
+        </div>
+        <div class="nx-row-body">
+          <div class="nx-row-body-inner">
+            <p class="nx-body-desc">High-open-rate campaigns with smart segmentation and automated drip funnels that nurture leads 24/7 on autopilot. The channel that consistently delivers the highest ROI.</p>
+            <div class="nx-body-features">
+              <div class="nx-body-features-title">What's included</div>
+              <ul>
+                <li>Email campaign design</li>
+                <li>Automation & drip flows</li>
+                <li>Audience segmentation</li>
+                <li>A/B subject line testing</li>
+                <li>Open rate & click analytics</li>
+              </ul>
+            </div>
+            <div class="nx-body-cta-box">
+              <div class="nx-body-cta-box-label">Avg. open rate</div>
+              <div class="nx-body-cta-badge">38%+</div>
+              <div class="nx-body-cta-note">Industry average is 21%</div>
+              <a href="#" class="nx-body-cta-btn" onclick="showPage('contact');return false">Build Your Funnel →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ HOW WE WORK ══ -->
+  <section class="nx-process reveal">
+    <div class="nx-process-inner">
+      <div class="nx-process-head">
+        <h2>How We <em>Work</em></h2>
+        <p>A four-step process designed to move fast, stay aligned, and deliver results you can actually measure.</p>
+      </div>
+      <div class="nx-steps">
+        <div class="nx-step">
+          <div class="nx-step-num">01</div>
+          <div class="nx-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="nx-step-title">Discovery Call</div>
+          <p class="nx-step-desc">Free 30-min strategy session. We learn your goals, audit your current presence, and identify the biggest growth levers.</p>
+        </div>
+        <div class="nx-step">
+          <div class="nx-step-num">02</div>
+          <div class="nx-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="nx-step-title">Strategy & Proposal</div>
+          <p class="nx-step-desc">We map a custom plan with clear deliverables, timelines, and KPIs. You know exactly what you're getting and when.</p>
+        </div>
+        <div class="nx-step">
+          <div class="nx-step-num">03</div>
+          <div class="nx-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="nx-step-title">Execute & Optimise</div>
+          <p class="nx-step-desc">We launch, run, and iterate weekly. Every campaign is continuously optimised based on live data — not gut feel.</p>
+        </div>
+        <div class="nx-step">
+          <div class="nx-step-num">04</div>
+          <div class="nx-step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <div class="nx-step-title">Report & Scale</div>
+          <p class="nx-step-desc">Monthly performance reviews with clear attribution. When something works, we double down. When it doesn't, we pivot fast.</p>
+        </div>
       </div>
     </div>
-
   </section>
-  <div class="cta-banner" style="position:relative"><div class="hd-shape hd-cta-blob" style="top:10px;left:6%"><svg width="80" height="60" viewBox="0 0 80 60" fill="none"><path d="M10 48 C8 28 20 6 40 4 C60 2 78 18 76 38 C74 56 56 64 36 60 C18 56 12 66 10 48Z" fill="#fff" opacity=".15"/></svg></div><div class="hd-shape hd-cta-sparkle" style="bottom:16px;right:8%"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 2 L20 14 L32 10 L22 18 L32 26 L20 22 L18 34 L16 22 L4 26 L14 18 L4 10 L16 14 Z" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".5"/></svg></div><h2 class="cta-title">Ready To Scale?</h2><p class="cta-sub">Tell us about your brand and we'll craft the perfect digital strategy for you.</p><a href="#" class="btn-white" onclick="showPage('contact');return false">Get Started Free →</a></div>
+
+  <!-- ══ CTA SECTION ══ -->
+  <section class="nx-cta reveal">
+    <div class="nx-cta-inner">
+      <div class="nx-cta-eyebrow">Ready to start?</div>
+      <h2 class="nx-cta-title">Let's Build Something<br><em>Worth Scaling.</em></h2>
+      <p class="nx-cta-sub">Book a free 30-minute strategy call. No pitch, no pressure — just a clear plan for your brand's digital growth.</p>
+      <div class="nx-cta-actions">
+        <a href="#" class="nx-cta-btn-primary" onclick="showPage('contact');return false">Book Free Consultation →</a>
+        <a href="#" class="nx-cta-btn-ghost" onclick="showPage('contact');return false">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
 </div>
-
 <!-- ABOUT PAGE -->
 <div id="about-page" class="page">
   <section style="background:var(--coal);padding:160px 48px 100px">
@@ -3206,6 +3784,15 @@ var revealObserver = new IntersectionObserver(function(entries){
   });
 }, {threshold: 0.12});
 document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+
+/* ── Nova-X accordion toggle ── */
+function nxToggle(row) {
+  var isOpen = row.classList.contains('open');
+  // close all
+  document.querySelectorAll('.nx-row.open').forEach(function(r){ r.classList.remove('open'); });
+  // open clicked if it was closed
+  if (!isOpen) { row.classList.add('open'); }
+}
 
 // Close mobile nav on resize
 window.addEventListener('resize', function(){
