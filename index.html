@@ -5,9 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BeCréatif – Creative Marketing That Actually Converts | Vadodara</title>
 <meta name="description" content="BeCréatif is a premium digital marketing agency in Vadodara, India. We offer Meta Ads, Social Media, Website Design, Video Editing & Performance Marketing pan India.">
+<!-- DNS prefetch for faster font loading -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<!-- Non-blocking font load with font-display:swap -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -22,11 +27,14 @@
   --border:rgba(255,255,255,0.08);
   --border-light:rgba(0,0,0,0.07);
 }
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth;font-size:16px;text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--coal);overflow-x:hidden;cursor:none}
+/* System font fallback stack while Outfit/DM Sans loads */
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif}
+.hero-headline,.section-title,.nav-logo,.footer-brand .nav-logo,.nx-hero-title,.nx-cta-title,.ub-block-title,.sn-name{font-family:'Outfit','Helvetica Neue',Arial,sans-serif}
 @media(hover:none),(pointer:coarse){body{cursor:auto}.cursor,.cursor-ring{display:none!important}}
-.cursor{position:fixed;width:12px;height:12px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--orange);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .08s,width .2s,height .2s,opacity .2s;opacity:.5}
+.cursor{position:fixed;width:12px;height:12px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;will-change:left,top,width,height}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--orange);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .08s,width .2s,height .2s,opacity .2s;opacity:.5;will-change:left,top,width,height}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .4s cubic-bezier(.4,0,.2,1)}
@@ -65,7 +73,7 @@ nav.scrolled .nav-hamburger span{background:var(--coal)}
 /* HERO */
 .hero{min-height:100vh;background:var(--coal);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 48px 80px}
 .hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:float 8s ease-in-out infinite}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:float 8s ease-in-out infinite;will-change:transform}
 .orb1{width:500px;height:500px;background:rgba(255,79,24,.18);top:-100px;right:-100px;animation-delay:0s}
 .orb2{width:300px;height:300px;background:rgba(255,79,24,.1);bottom:100px;left:50px;animation-delay:-3s}
 .orb3{width:200px;height:200px;background:rgba(255,255,255,.03);top:50%;left:60%;animation-delay:-5s}
@@ -104,7 +112,7 @@ nav.scrolled .nav-hamburger span{background:var(--coal)}
 
 /* MARQUEE */
 .marquee-section{background:var(--orange);padding:16px 0;overflow:hidden}
-.marquee-track{display:flex;animation:marquee 20s linear infinite;width:max-content}
+.marquee-track{display:flex;animation:marquee 20s linear infinite;width:max-content;will-change:transform}
 .marquee-item{font-size:13px;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase;padding:0 40px;opacity:.9;white-space:nowrap}
 .marquee-dot{color:rgba(255,255,255,.5);margin:0 0}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -238,7 +246,7 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 @keyframes waBounce{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 .whatsapp-btn svg{width:30px;height:30px}
 .wa-tooltip{position:fixed;bottom:34px;right:96px;background:var(--coal);color:#fff;font-size:13px;font-weight:600;padding:8px 16px;border-radius:100px;z-index:200;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
-.whatsapp-btn:hover~.wa-tooltip{opacity:1}
+.whatsapp-btn:hover+.wa-tooltip{opacity:1}
 
 /* PAGE SYSTEM */
 .page{display:none}
@@ -780,8 +788,26 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 }
 
 /* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:translateY(0);will-change:auto}
+
+/* =============================================
+   PERFORMANCE: content-visibility for off-screen sections
+   Reduces initial paint cost significantly on low-end devices
+   ============================================= */
+.testimonials,.cta-banner,footer,#services-page,#about-page,#clients-page,#blog-page,#contact-page{
+  content-visibility:auto;
+  contain-intrinsic-size:0 600px;
+}
+/* Process and why sections are slightly below fold */
+.process,.why{
+  content-visibility:auto;
+  contain-intrinsic-size:0 500px;
+}
+/* Isolate sections from causing full-page repaints */
+.hero,.marquee-section,.services,.about,.testimonials,.contact,.cta-banner{
+  contain:layout style;
+}
 
 /* CLIENTS SECTION */
 .clients{background:var(--fog);padding:100px 48px}
@@ -889,6 +915,34 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 }
 
 /* =============================================
+   PERFORMANCE: Respect prefers-reduced-motion
+   Disables heavy animations for accessibility + low-end devices
+   ============================================= */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal{opacity:1;transform:none}
+  .hero-orb{animation:none}
+  .marquee-track{animation:none}
+  .hd-shape{animation:none}
+  .badge-dot{animation:none}
+  .whatsapp-btn{animation:none}
+}
+
+/* =============================================
+   PERFORMANCE: Reduce GPU load on low-end devices
+   Remove expensive filter:blur on orbs for weak GPUs
+   ============================================= */
+@media(max-width:600px){
+  .hero-orb{filter:blur(40px)}
+  .orb1{width:280px;height:280px}
+  .orb2{width:180px;height:180px}
+}
+
+/* =============================================
    PAGE TRANSITION — CURTAIN WIPE
    ============================================= */
 .page-transition{
@@ -905,6 +959,7 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
   transform:scaleY(0);
   transform-origin:bottom;
   transition:transform .55s cubic-bezier(.86,0,.07,1);
+  will-change:transform;
 }
 .pt-panel:nth-child(1){transition-delay:0s}
 .pt-panel:nth-child(2){transition-delay:.04s}
@@ -1076,6 +1131,7 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
   transform:scale(.88) translateY(12px);
   transition:opacity .25s ease, transform .3s cubic-bezier(.34,1.2,.64,1);
   box-shadow:0 32px 80px rgba(0,0,0,.2);
+  will-change:left,top,opacity,transform;
 }
 .sn-preview.visible{opacity:1;transform:scale(1) translateY(0)}
 .sn-preview-inner{
@@ -2228,7 +2284,7 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" onclick="showPage('home')">Be<span>Créatif</span></a>
+    <a href="#" class="nav-logo" onclick="showPage('home');return false">Be<span>Créatif</span></a>
     <div class="nav-links">
       <a href="#" onclick="showPage('home');return false">Home</a>
       <a href="#" onclick="showPage('services');return false">Services</a>
@@ -3616,7 +3672,7 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
               <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@yourbrand.com"></div>
               <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"></div>
               <div class="form-group"><label>Service Interested In</label>
-                <select style="background:var(--fog);border:1.5px solid transparent;border-radius:12px;padding:14px 18px;font-size:15px;color:var(--coal);outline:none;font-family:inherit;appearance:none">
+                <select>
                   <option value="">Select a service...</option>
                   <option>Meta Ads</option><option>Social Media Management</option><option>Video Editing</option><option>Content Planning</option><option>Website Design</option><option>Email Marketing</option><option>Digital Marketing</option><option>All of the above</option>
                 </select>
@@ -3688,6 +3744,7 @@ var ptLogo = document.getElementById('ptLogo');
 function showPage(name) {
   if (isTransitioning) return;
   isTransitioning = true;
+  document.body.style.overflow = ''; // reset in case mobile nav had locked scroll
 
   // PHASE 1: Panels sweep IN (bottom → top)
   ptOverlay.classList.remove('exiting');
@@ -3703,13 +3760,14 @@ function showPage(name) {
   setTimeout(function() {
     document.querySelectorAll('.page').forEach(function(p) {
       p.style.display = 'none';
+      p.classList.remove('active');
     });
     var el = document.getElementById(name + '-page');
     if (el) {
       el.style.display = 'block';
+      el.classList.add('active');
       window.scrollTo({top: 0, behavior: 'instant'});
     }
-    if (name === 'home') document.getElementById('home-page').style.display = 'block';
 
     // PHASE 3: Panels sweep OUT (top → bottom)
     setTimeout(function() {
@@ -3742,18 +3800,26 @@ document.getElementById('hamburger').addEventListener('click', function() {
   else { nav.classList.add('open'); ham.classList.add('active'); document.body.style.overflow = 'hidden'; }
 });
 
-// Custom cursor (desktop only)
+// Custom cursor (desktop only) — skip entirely on touch devices
 var cursor = document.getElementById('cursor');
 var ring = document.getElementById('cursorRing');
-var mouseX=0, mouseY=0, ringX=0, ringY=0;
-if (cursor && ring) {
+var cursorMouseX=0, cursorMouseY=0, ringX=0, ringY=0;
+var isTouchDevice = window.matchMedia('(hover:none),(pointer:coarse)').matches;
+if (cursor && ring && !isTouchDevice) {
   document.addEventListener('mousemove', function(e){
-    mouseX = e.clientX; mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px';
-  });
+    cursorMouseX = e.clientX; cursorMouseY = e.clientY;
+    cursor.style.left = cursorMouseX + 'px'; cursor.style.top = cursorMouseY + 'px';
+  }, {passive: true});
   function animateRing(){
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
+    ringX += (cursorMouseX - ringX) * 0.12;
+    ringY += (cursorMouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+  function animateRing(){
+    ringX += (cursorMouseX - ringX) * 0.12;
+    ringY += (cursorMouseY - ringY) * 0.12;
     ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
     requestAnimationFrame(animateRing);
   }
@@ -3770,19 +3836,29 @@ if (cursor && ring) {
   });
 }
 
-// Navbar scroll
+// Navbar scroll — throttled with RAF for performance
+var scrollTicking = false;
 window.addEventListener('scroll', function(){
-  var nav = document.getElementById('navbar');
-  if (window.scrollY > 40) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-});
+  if (!scrollTicking) {
+    requestAnimationFrame(function() {
+      var nav = document.getElementById('navbar');
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+      scrollTicking = false;
+    });
+    scrollTicking = true;
+  }
+}, {passive: true});
 
-// Scroll reveal
+// Scroll reveal — unobserve after triggering to reduce overhead
 var revealObserver = new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
   });
-}, {threshold: 0.12});
+}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
 
 /* ── Nova-X accordion toggle ── */
@@ -3794,10 +3870,14 @@ function nxToggle(row) {
   if (!isOpen) { row.classList.add('open'); }
 }
 
-// Close mobile nav on resize
+// Close mobile nav on resize — debounced
+var resizeTimer;
 window.addEventListener('resize', function(){
-  if (window.innerWidth > 900) closeMobileNav();
-});
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    if (window.innerWidth > 900) closeMobileNav();
+  }, 100);
+}, {passive: true});
 
 /* ── TEXT SCRAMBLE EFFECT ── */
 var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*';
@@ -3920,26 +4000,33 @@ var previewDesc = document.getElementById('snPreviewDesc');
 var previewPills = document.getElementById('snPreviewPills');
 var previewIcon = document.getElementById('snPreviewIcon');
 var previewNum = document.getElementById('snPreviewNum');
-var mouseX = 0, mouseY = 0;
-var previewX = 0, previewY = 0;
+var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+var previewX = window.innerWidth / 2, previewY = window.innerHeight / 2;
 var previewVisible = false;
+var previewInitialized = false;
+var previewRafId = null;
 
-// Smooth floating follow
-function animatePreview() {
-  previewX += (mouseX - previewX) * 0.1;
-  previewY += (mouseY - previewY) * 0.1;
-  if (preview) {
+// Only run preview animation on desktop where it's visible
+if (preview && window.innerWidth >= 900) {
+  function animatePreview() {
+    previewX += (mouseX - previewX) * 0.1;
+    previewY += (mouseY - previewY) * 0.1;
     preview.style.left = previewX + 'px';
     preview.style.top = previewY + 'px';
+    previewRafId = requestAnimationFrame(animatePreview);
   }
-  requestAnimationFrame(animatePreview);
+  animatePreview();
 }
-animatePreview();
 
 document.addEventListener('mousemove', function(e) {
   mouseX = e.clientX + 24;
   mouseY = e.clientY - 120;
-});
+  if (!previewInitialized) {
+    previewX = mouseX;
+    previewY = mouseY;
+    previewInitialized = true;
+  }
+}, {passive: true});
 
 document.querySelectorAll('.sn-item').forEach(function(item) {
   var idx = parseInt(item.getAttribute('data-service'));
