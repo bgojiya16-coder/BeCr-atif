@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Eliminates 300ms tap delay on all mobile browsers -->
+<meta name="HandheldFriendly" content="true">
 <title>BeCréatif – Creative Marketing That Actually Converts | Vadodara</title>
 <meta name="description" content="BeCréatif is a premium digital marketing agency in Vadodara, India. We offer Meta Ads, Social Media, Website Design, Video Editing & Performance Marketing pan India.">
-<!-- DNS prefetch for faster font loading -->
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Non-blocking font load with font-display:swap -->
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap&font-display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+/* Eliminate 300ms tap delay on touch devices */
+a,button,[onclick]{touch-action:manipulation}
 :root{
   --orange:#FF4F18;
   --orange-light:#FF6B3D;
@@ -27,14 +27,11 @@
   --border:rgba(255,255,255,0.08);
   --border-light:rgba(0,0,0,0.07);
 }
-html{scroll-behavior:smooth;font-size:16px;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--coal);overflow-x:hidden;cursor:none}
-/* System font fallback stack while Outfit/DM Sans loads */
-body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif}
-.hero-headline,.section-title,.nav-logo,.footer-brand .nav-logo,.nx-hero-title,.nx-cta-title,.ub-block-title,.sn-name{font-family:'Outfit','Helvetica Neue',Arial,sans-serif}
 @media(hover:none),(pointer:coarse){body{cursor:auto}.cursor,.cursor-ring{display:none!important}}
-.cursor{position:fixed;width:12px;height:12px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;will-change:left,top,width,height}
-.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--orange);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .08s,width .2s,height .2s,opacity .2s;opacity:.5;will-change:left,top,width,height}
+.cursor{position:fixed;width:12px;height:12px;background:var(--orange);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;will-change:left,top}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--orange);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .08s,width .2s,height .2s,opacity .2s;opacity:.5;will-change:left,top}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .4s cubic-bezier(.4,0,.2,1)}
@@ -73,7 +70,7 @@ nav.scrolled .nav-hamburger span{background:var(--coal)}
 /* HERO */
 .hero{min-height:100vh;background:var(--coal);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:120px 48px 80px}
 .hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:float 8s ease-in-out infinite;will-change:transform}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:float 8s ease-in-out infinite;will-change:transform;contain:strict}
 .orb1{width:500px;height:500px;background:rgba(255,79,24,.18);top:-100px;right:-100px;animation-delay:0s}
 .orb2{width:300px;height:300px;background:rgba(255,79,24,.1);bottom:100px;left:50px;animation-delay:-3s}
 .orb3{width:200px;height:200px;background:rgba(255,255,255,.03);top:50%;left:60%;animation-delay:-5s}
@@ -101,7 +98,7 @@ nav.scrolled .nav-hamburger span{background:var(--coal)}
 .stat-divider{width:1px;background:rgba(255,255,255,.1);height:50px;align-self:center}
 
 /* floating cards */
-.hero-card{position:absolute;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 20px;animation:float 6s ease-in-out infinite}
+.hero-card{position:absolute;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 20px;animation:float 6s ease-in-out infinite;will-change:transform}
 .card-left{left:4%;top:35%;animation-delay:-2s}
 .card-right{right:4%;top:45%;animation-delay:-4s}
 .hcard-label{font-size:11px;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:6px}
@@ -119,6 +116,8 @@ nav.scrolled .nav-hamburger span{background:var(--coal)}
 
 /* SECTIONS */
 section{padding:100px 48px}
+/* Defer rendering of off-screen sections — browser skips layout/paint until near viewport */
+section:not(.hero){content-visibility:auto;contain-intrinsic-size:0 600px}
 .section-label{font-size:12px;font-weight:700;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
 .section-title{font-size:clamp(28px,4vw,52px);font-weight:900;color:var(--coal);line-height:1.1;letter-spacing:-1.5px;font-family:'Outfit',sans-serif}
 .section-title.light{color:#fff}
@@ -788,25 +787,19 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 }
 
 /* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;will-change:opacity,transform}
-.reveal.visible{opacity:1;transform:translateY(0);will-change:auto}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-/* =============================================
-   PERFORMANCE: content-visibility for off-screen sections
-   Reduces initial paint cost significantly on low-end devices
-   ============================================= */
-.testimonials,.cta-banner,footer,#services-page,#about-page,#clients-page,#blog-page,#contact-page{
-  content-visibility:auto;
-  contain-intrinsic-size:0 600px;
-}
-/* Process and why sections are slightly below fold */
-.process,.why{
-  content-visibility:auto;
-  contain-intrinsic-size:0 500px;
-}
-/* Isolate sections from causing full-page repaints */
-.hero,.marquee-section,.services,.about,.testimonials,.contact,.cta-banner{
-  contain:layout style;
+/* ── LOW-END DEVICE OPTIMISATIONS ──
+   Backdrop-filter (blur) is the #1 GPU killer on budget phones.
+   We disable it below 600px where low-end devices dominate. */
+@media(max-width:600px){
+  .nav-inner,.hero-card,.sn-preview,.testi-card{
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+  /* Reduce blur radius on orbs to ease GPU load */
+  .hero-orb{filter:blur(40px)!important}
 }
 
 /* CLIENTS SECTION */
@@ -912,34 +905,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
   .bento{padding:20px}
   .cta-banner{padding:40px 14px}
   .footer-grid{gap:20px}
-}
-
-/* =============================================
-   PERFORMANCE: Respect prefers-reduced-motion
-   Disables heavy animations for accessibility + low-end devices
-   ============================================= */
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-  }
-  .reveal{opacity:1;transform:none}
-  .hero-orb{animation:none}
-  .marquee-track{animation:none}
-  .hd-shape{animation:none}
-  .badge-dot{animation:none}
-  .whatsapp-btn{animation:none}
-}
-
-/* =============================================
-   PERFORMANCE: Reduce GPU load on low-end devices
-   Remove expensive filter:blur on orbs for weak GPUs
-   ============================================= */
-@media(max-width:600px){
-  .hero-orb{filter:blur(40px)}
-  .orb1{width:280px;height:280px}
-  .orb2{width:180px;height:180px}
 }
 
 /* =============================================
@@ -1131,7 +1096,6 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
   transform:scale(.88) translateY(12px);
   transition:opacity .25s ease, transform .3s cubic-bezier(.34,1.2,.64,1);
   box-shadow:0 32px 80px rgba(0,0,0,.2);
-  will-change:left,top,opacity,transform;
 }
 .sn-preview.visible{opacity:1;transform:scale(1) translateY(0)}
 .sn-preview-inner{
@@ -1248,6 +1212,18 @@ footer{background:var(--coal);padding:72px 48px 40px;border-top:1px solid rgba(2
 }
 @media(max-width:600px){
   .hd-shape{display:none}
+}
+
+/* ── REDUCED MOTION: kill all animations for low-power / accessibility ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .hero-orb,.hero-card,.hd-shape,.marquee-track{animation:none!important;will-change:auto!important}
+  .pt-panel{transition:none!important}
 }
 
 /* =============================================
@@ -3800,23 +3776,22 @@ document.getElementById('hamburger').addEventListener('click', function() {
   else { nav.classList.add('open'); ham.classList.add('active'); document.body.style.overflow = 'hidden'; }
 });
 
-// Custom cursor (desktop only) — skip entirely on touch devices
+// Custom cursor (desktop only)
 var cursor = document.getElementById('cursor');
 var ring = document.getElementById('cursorRing');
 var cursorMouseX=0, cursorMouseY=0, ringX=0, ringY=0;
-var isTouchDevice = window.matchMedia('(hover:none),(pointer:coarse)').matches;
-if (cursor && ring && !isTouchDevice) {
+if (cursor && ring) {
+  var cursorTicking = false;
   document.addEventListener('mousemove', function(e){
     cursorMouseX = e.clientX; cursorMouseY = e.clientY;
-    cursor.style.left = cursorMouseX + 'px'; cursor.style.top = cursorMouseY + 'px';
-  }, {passive: true});
-  function animateRing(){
-    ringX += (cursorMouseX - ringX) * 0.12;
-    ringY += (cursorMouseY - ringY) * 0.12;
-    ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
+    if (!cursorTicking) {
+      requestAnimationFrame(function(){
+        cursor.style.left = cursorMouseX + 'px'; cursor.style.top = cursorMouseY + 'px';
+        cursorTicking = false;
+      });
+      cursorTicking = true;
+    }
+  }, {passive:true});
   function animateRing(){
     ringX += (cursorMouseX - ringX) * 0.12;
     ringY += (cursorMouseY - ringY) * 0.12;
@@ -3836,29 +3811,29 @@ if (cursor && ring && !isTouchDevice) {
   });
 }
 
-// Navbar scroll — throttled with RAF for performance
-var scrollTicking = false;
-window.addEventListener('scroll', function(){
-  if (!scrollTicking) {
-    requestAnimationFrame(function() {
-      var nav = document.getElementById('navbar');
-      if (window.scrollY > 40) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-      scrollTicking = false;
-    });
-    scrollTicking = true;
+// Navbar scroll — passive + RAF throttled to prevent jank
+(function(){
+  var nav = document.getElementById('navbar');
+  var ticking = false;
+  function onScroll(){
+    if (!ticking) {
+      requestAnimationFrame(function(){
+        if (window.scrollY > 40) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+        ticking = false;
+      });
+      ticking = true;
+    }
   }
-}, {passive: true});
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
 
-// Scroll reveal — unobserve after triggering to reduce overhead
+// Scroll reveal
 var revealObserver = new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
   });
-}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+}, {threshold: 0.12});
 document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
 
 /* ── Nova-X accordion toggle ── */
@@ -3870,22 +3845,28 @@ function nxToggle(row) {
   if (!isOpen) { row.classList.add('open'); }
 }
 
-// Close mobile nav on resize — debounced
-var resizeTimer;
-window.addEventListener('resize', function(){
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    if (window.innerWidth > 900) closeMobileNav();
-  }, 100);
-}, {passive: true});
+// Close mobile nav on resize — passive + RAF throttled
+(function(){
+  var resizeTicking = false;
+  window.addEventListener('resize', function(){
+    if (!resizeTicking) {
+      requestAnimationFrame(function(){
+        if (window.innerWidth > 900) closeMobileNav();
+        resizeTicking = false;
+      });
+      resizeTicking = true;
+    }
+  }, {passive:true});
+})();
 
 /* ── TEXT SCRAMBLE EFFECT ── */
 var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*';
 function scrambleText(el, finalText, duration) {
-  var start = Date.now();
+  var start = null;
   var len = finalText.length;
-  var interval = setInterval(function() {
-    var elapsed = Date.now() - start;
+  function frame(ts) {
+    if (!start) start = ts;
+    var elapsed = ts - start;
     var progress = Math.min(elapsed / duration, 1);
     var result = '';
     for (var i = 0; i < len; i++) {
@@ -3898,8 +3879,9 @@ function scrambleText(el, finalText, duration) {
       }
     }
     el.textContent = result;
-    if (progress >= 1) clearInterval(interval);
-  }, 28);
+    if (progress < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 }
 
 // Apply scramble to elements with data-text on hover
@@ -3935,7 +3917,7 @@ document.querySelectorAll('.magnetic').forEach(function(btn) {
     var dy = (e.clientY - cy) * 0.35;
     btn.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(1.04)';
     btn.style.boxShadow = '0 16px 48px rgba(255,79,24,.5)';
-  });
+  }, {passive:true});
   btn.addEventListener('mouseleave', function() {
     btn.style.transform = '';
     btn.style.boxShadow = '';
@@ -4004,19 +3986,18 @@ var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
 var previewX = window.innerWidth / 2, previewY = window.innerHeight / 2;
 var previewVisible = false;
 var previewInitialized = false;
-var previewRafId = null;
 
-// Only run preview animation on desktop where it's visible
-if (preview && window.innerWidth >= 900) {
-  function animatePreview() {
-    previewX += (mouseX - previewX) * 0.1;
-    previewY += (mouseY - previewY) * 0.1;
+// Smooth floating follow
+function animatePreview() {
+  previewX += (mouseX - previewX) * 0.1;
+  previewY += (mouseY - previewY) * 0.1;
+  if (preview) {
     preview.style.left = previewX + 'px';
     preview.style.top = previewY + 'px';
-    previewRafId = requestAnimationFrame(animatePreview);
   }
-  animatePreview();
+  requestAnimationFrame(animatePreview);
 }
+animatePreview();
 
 document.addEventListener('mousemove', function(e) {
   mouseX = e.clientX + 24;
@@ -4026,7 +4007,7 @@ document.addEventListener('mousemove', function(e) {
     previewY = mouseY;
     previewInitialized = true;
   }
-}, {passive: true});
+}, {passive:true});
 
 document.querySelectorAll('.sn-item').forEach(function(item) {
   var idx = parseInt(item.getAttribute('data-service'));
